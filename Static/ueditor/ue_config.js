@@ -1,0 +1,9 @@
+window.UEDITOR_HOME_URL='/Static/ueditor/';
+    window.onload=function(){
+        window.UEDITOR_CONFIG.initialFrameWidth=900; 
+        window.UEDITOR_CONFIG.initialFrameHeight=400;
+        window.UEDITOR_CONFIG.imageUrl="/Upload/upload";
+        UE.getEditor('Content',{
+            toolbars:[['source','bold','underline','forecolor','fontsize','fontfamily','insertorderedlist','justifyleft','justifycenter','justifyright','link','unlink','simpleupload','insertimage','emotion','insertvideo','inserttable','mergecells','removeformat']]
+        });
+    }

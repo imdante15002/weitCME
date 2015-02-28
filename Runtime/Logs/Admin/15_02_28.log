@@ -1,0 +1,401 @@
+[ 2015-02-28T10:29:53+08:00 ] ::1 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000739s ]
+
+[ 2015-02-28T10:29:54+08:00 ] ::1 /admin.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001105s ]
+
+[ 2015-02-28T10:29:54+08:00 ] ::1 /admin.php/Public/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000920s ]
+
+[ 2015-02-28T10:30:04+08:00 ] ::1 /admin.php/Public/login_do.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000880s ]
+
+[ 2015-02-28T10:30:06+08:00 ] ::1 /admin.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000726s ]
+
+[ 2015-02-28T10:30:06+08:00 ] ::1 /admin.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000895s ]
+
+[ 2015-02-28T10:30:08+08:00 ] ::1 /admin.php/Config/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000970s ]
+
+[ 2015-02-28T10:30:09+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000597s ]
+
+[ 2015-02-28T10:32:08+08:00 ] ::1 /admin.php/ForumHandle/delAllForum.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000712s ]
+ERR: 无法加载控制器:ForumHandle
+
+[ 2015-02-28T10:32:18+08:00 ] ::1 /admin.php/Config/edNavigation/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000759s ]
+
+[ 2015-02-28T10:32:24+08:00 ] ::1 /admin.php/ConfigHandle/edNavigation.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000595s ]
+
+[ 2015-02-28T10:32:25+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000988s ]
+
+[ 2015-02-28T10:32:27+08:00 ] ::1 /admin.php/Config/edNavigation/id/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000879s ]
+
+[ 2015-02-28T10:32:34+08:00 ] ::1 /admin.php/ConfigHandle/edNavigation.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000889s ]
+
+[ 2015-02-28T10:32:35+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000952s ]
+
+[ 2015-02-28T10:32:38+08:00 ] ::1 /admin.php/Config/edNavigation/id/11.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000706s ]
+
+[ 2015-02-28T10:32:57+08:00 ] ::1 /admin.php/ConfigHandle/edNavigation.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000759s ]
+
+[ 2015-02-28T10:33:05+08:00 ] ::1 /admin.php/ConfigHandle/edNavigation.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000612s ]
+
+[ 2015-02-28T10:33:07+08:00 ] ::1 /admin.php/Config/edNavigation/id/11.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000816s ]
+
+[ 2015-02-28T10:34:04+08:00 ] ::1 /admin.php/Config/edNavigation/id/11.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000594s ]
+
+[ 2015-02-28T10:35:49+08:00 ] ::1 /admin.php/Config/edNavigation/id/11.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000733s ]
+
+[ 2015-02-28T10:35:51+08:00 ] ::1 /admin.php/Config/edNavigation/id/11.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000721s ]
+
+[ 2015-02-28T10:36:15+08:00 ] ::1 /admin.php/Config/edNavigation/id/11.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000634s ]
+
+[ 2015-02-28T10:36:30+08:00 ] ::1 /admin.php/ConfigHandle/edNavigation.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000670s ]
+
+[ 2015-02-28T10:36:34+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000937s ]
+
+[ 2015-02-28T10:36:35+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000636s ]
+
+[ 2015-02-28T10:37:35+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001013s ]
+
+[ 2015-02-28T10:37:54+08:00 ] ::1 /admin.php/ConfigHandle/addNavgation.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001056s ]
+
+[ 2015-02-28T10:37:55+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000633s ]
+
+[ 2015-02-28T10:38:10+08:00 ] ::1 /admin.php/ConfigHandle/addNavgation.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000963s ]
+
+[ 2015-02-28T10:38:11+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000726s ]
+
+[ 2015-02-28T10:38:31+08:00 ] ::1 /admin.php/ConfigHandle/addNavgation.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000911s ]
+
+[ 2015-02-28T10:38:32+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000940s ]
+
+[ 2015-02-28T10:38:32+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001095s ]
+
+[ 2015-02-28T10:38:53+08:00 ] ::1 /admin.php/ConfigHandle/delNavigation/id/14.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001094s ]
+
+[ 2015-02-28T10:38:54+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000857s ]
+
+[ 2015-02-28T10:39:04+08:00 ] ::1 /admin.php/ConfigHandle/addNavgation.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000860s ]
+
+[ 2015-02-28T10:39:06+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000715s ]
+
+[ 2015-02-28T10:39:07+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000934s ]
+
+[ 2015-02-28T10:39:34+08:00 ] ::1 /admin.php/ConfigHandle/upNavgation.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000936s ]
+
+[ 2015-02-28T10:39:35+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000940s ]
+
+[ 2015-02-28T10:39:36+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000633s ]
+
+[ 2015-02-28T10:40:03+08:00 ] ::1 /admin.php/Config/edNavigation/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000940s ]
+
+[ 2015-02-28T10:40:06+08:00 ] ::1 /admin.php/ConfigHandle/edNavigation.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000694s ]
+
+[ 2015-02-28T10:40:07+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000805s ]
+
+[ 2015-02-28T10:40:11+08:00 ] ::1 /admin.php/Config/edNavigation/id/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000726s ]
+
+[ 2015-02-28T10:40:14+08:00 ] ::1 /admin.php/ConfigHandle/edNavigation.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000628s ]
+
+[ 2015-02-28T10:40:15+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000962s ]
+
+[ 2015-02-28T10:40:18+08:00 ] ::1 /admin.php/Config/edNavigation/id/15.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000612s ]
+
+[ 2015-02-28T10:40:20+08:00 ] ::1 /admin.php/ConfigHandle/edNavigation.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000838s ]
+
+[ 2015-02-28T10:40:21+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000799s ]
+
+[ 2015-02-28T10:41:29+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001185s ]
+
+[ 2015-02-28T10:43:40+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000907s ]
+
+[ 2015-02-28T10:44:23+08:00 ] ::1 /admin.php/Config/edNavigation/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002619s ]
+
+[ 2015-02-28T10:44:25+08:00 ] ::1 /admin.php/ConfigHandle/edNavigation.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000617s ]
+
+[ 2015-02-28T10:44:27+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000824s ]
+
+[ 2015-02-28T10:44:29+08:00 ] ::1 /admin.php/Config/edNavigation/id/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000882s ]
+
+[ 2015-02-28T10:44:32+08:00 ] ::1 /admin.php/ConfigHandle/edNavigation.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000935s ]
+
+[ 2015-02-28T10:44:33+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001087s ]
+
+[ 2015-02-28T10:44:47+08:00 ] ::1 /admin.php/Config/edNavigation/id/15.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001031s ]
+
+[ 2015-02-28T10:44:49+08:00 ] ::1 /admin.php/ConfigHandle/edNavigation.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000971s ]
+
+[ 2015-02-28T10:44:50+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000955s ]
+
+[ 2015-02-28T10:46:17+08:00 ] ::1 /admin.php/Config/edNavigation/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000826s ]
+
+[ 2015-02-28T10:46:19+08:00 ] ::1 /admin.php/ConfigHandle/edNavigation.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000825s ]
+
+[ 2015-02-28T10:46:20+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000916s ]
+
+[ 2015-02-28T10:46:20+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000990s ]
+
+[ 2015-02-28T10:46:23+08:00 ] ::1 /admin.php/Config/edNavigation/id/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000068s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002772s ]
+
+[ 2015-02-28T10:46:25+08:00 ] ::1 /admin.php/ConfigHandle/edNavigation.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000909s ]
+
+[ 2015-02-28T10:46:26+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001053s ]
+
+[ 2015-02-28T10:46:28+08:00 ] ::1 /admin.php/Config/edNavigation/id/15.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000917s ]
+
+[ 2015-02-28T10:46:30+08:00 ] ::1 /admin.php/ConfigHandle/edNavigation.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000988s ]
+
+[ 2015-02-28T10:46:31+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000923s ]
+
+[ 2015-02-28T14:07:49+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000915s ]
+
+[ 2015-02-28T15:51:43+08:00 ] ::1 /admin.php/Config/navs.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000924s ]
+
+[ 2015-02-28T15:51:45+08:00 ] ::1 /admin.php/Member/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000884s ]
+
+[ 2015-02-28T15:51:46+08:00 ] ::1 /admin.php/Portal/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000611s ]
+
+[ 2015-02-28T15:51:49+08:00 ] ::1 /admin.php/Portal/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000953s ]
+
+[ 2015-02-28T15:52:23+08:00 ] ::1 /admin.php/Portal/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000966s ]
+
+[ 2015-02-28T16:15:20+08:00 ] ::1 /admin.php/Portal/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000826s ]
+
+[ 2015-02-28T16:15:24+08:00 ] ::1 /admin.php/Portal/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000887s ]
+

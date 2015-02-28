@@ -1,0 +1,36 @@
+<!-- block for user state -->
+<div class="user-block y">
+	<notempty name="guid">
+	<div class="on-line">
+		<ul>
+			<li><a href="<!--{$g.siteurl}-->/member.php/post.html"><i class="fa fa-plus xs20"></i></a></li>
+			<li class="user-avtar">
+				<a href="<!--{$g.siteurl}-->/member.php/home/<!--{$u.uid}-->.html">
+				<notempty name='u.avtimg'>
+					<img src="<!--{$u.avtimg}-->" alt="<!--{$u.username}-->">
+				<else/>
+					<span class="user-default-avtar"><i class="fa fa-user"></i></span>
+				</notempty>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;" class="user-block-dropdown"><!--{$u.username}--> <i class="fa fa-chevron-down"></i></a>
+				<ul class="user-block-menu">
+					<li><a href="<!--{$g.siteurl}-->/member.php/home/<!--{$u.uid}-->.html"><i class="fa fa-home"></i> 主页</a></li>
+					<li><a href="<!--{$g.siteurl}-->/member.php/config/<!--{$u.uid}-->.html"><i class="fa fa-cog"></i> 设置</a></li>
+					<li><a href="<!--{$g.siteurl}-->/member.php/thread/<!--{$u.uid}-->.html"><i class="fa fa-comment-o"></i> 帖子</a></li>
+					<li><a href="<!--{$g.siteurl}-->/member.php/reply/<!--{$u.uid}-->.html"><i class="fa fa-comments-o"></i> 回复</a></li>
+					<li><a href="<!--{$g.siteurl}-->/member.php/record/<!--{$u.uid}-->.html"><i class="fa fa-star-o"></i> 收藏</a></li>
+					<li class="bdnone"><a href="<!--{$g.siteurl}-->/member.php/public/logout.html"><i class="fa fa-power-off"></i> 退出</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<else/>
+	<div class="off-line">
+		<a href="javascript:;" class="login-btn modal" id="#login-modal"><i class="fa fa-user"></i> 登录</a>
+		<a href="<!--{$g.siteurl}-->/member.php/register.html" class="reg-btn">注册</a>
+	</div>
+	</notempty>
+</div>
+<!-- //end user block -->

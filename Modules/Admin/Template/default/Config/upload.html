@@ -1,0 +1,76 @@
+<include file="Modules/Admin/Template/default/common/header.html"/>
+<section class="main">
+    <div class="info-title">上传设置</div>
+             <form action="<!--{:U('Config/save_upload')}-->" method="post">
+                <input type="hidden" name="id" value="<!--{$ec.id}-->">
+                <table class="table" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>图片分流</td>
+                            <td>
+                                  <label class="mr20"><input type="radio" name="ps_on" value="1"  <if condition="$ec['ps_on'] eq '1'"> checked</if>> 开启</label>
+                                  <label><input type="radio" name="ps_on" value="0"  <if condition="$ec['ps_on'] eq '0'"> checked</if>>关闭</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>图片分流域名</td>
+                            <td><input type="text" name="ps_url" value="<!--{$ec.ps_url}-->" class="w360"></td>
+                        </tr>
+                        <tr>
+                            <td width="120">图片上传路径</td>
+                            <td><input type="text" name="up_url" value="<!--{$ec.up_url}-->" class="w360"></td>
+                        </tr>
+                        <tr>
+                            <td>大小限制</td>
+                            <td><input type="text" name="up_size" value="<!--{$ec.up_size}-->" class="w240" placeholder="图片上传大小限制,如1M填写（1024000）"></td>
+                        </tr>
+                        <tr>
+                            <td>启用缩略图</td>
+                            <td>
+                                  <label class="mr20">
+                                    <input type="radio" name="thumb_on" value="1" autocomplete="off"  <if condition="$ec['thumb_on'] eq '1'"> checked</if>> 开启
+                                  </label>
+                                  <label>
+                                    <input type="radio" name="thumb_on" value="0" autocomplete="off"  <if condition="$ec['thumb_on'] eq '0'"> checked</if>>关闭
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>缩略图大小</td><td><input type="text" name="thumb_size" value="<!--{$ec.thumb_size}-->" class="w160"><span class="ml10">格式为（160,80）</span></td>
+                        </tr>
+                         <tr>
+                            <td>静态分布加载</td>
+                            <td>
+                              <label class="mr20">
+                                <input type="radio" name="stc_on" value="1"  <if condition="$ec['stc_on'] eq '1'"> checked</if>> 开启
+                              </label>
+                              <label>
+                                <input type="radio" name="stc_on" value="0"  <if condition="$ec['stc_on'] eq '0'"> checked</if>>关闭
+                              </label>
+                        </tr>
+                        <tr>
+                            <td>分布加载域名</td>
+                            <td><input type="text" name="stc_url" value="<!--{$ec.stc_url}-->" class="w360"></td>
+                        </tr>
+                        <tr>
+                            <td>图片延迟加载</td>
+                            <td>
+                                  <label class="mr20">
+                                    <input type="radio" name="daley_on" value="1"  <if condition="$ec['daley_on'] eq '1'"> checked</if>> 开启
+                                  </label>
+                                  <label>
+                                    <input type="radio" name="daley_on" value="0"  <if condition="$ec['daley_on'] eq '0'"> checked</if>>关闭
+                                  </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" class="btn btn-primary" value="提交保存" ></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+<include file="Modules/Admin/Template/default/common/footer.html"/>

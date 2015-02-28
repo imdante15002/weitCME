@@ -1,0 +1,55 @@
+<include file="Modules/Admin/Template/default/common/header.html"/>
+<section class="main">
+<div class="panel">
+  <div class="panel-header"><i class="fa fa-plus"></i> 添加栏目 
+        <span class="ml20 xs2">
+            <a href="<!--{:U('Portal/index')}-->"><i class="fa fa-chevron-left"></i> 返回</a>
+        </span>
+    </div>
+    <div class="panel-body">
+            <form action="<!--{:U('PortalHandle/addChannel')}-->" method="post">
+                <table class="table">
+                    <tbody>
+                        <tr><td width="60">名称</td><td><input type="text" name="name" id="name" class=" w300" value=""></td></tr>
+                        <tr><td>上级</td>
+                            <td><select name="pid">
+                                    <option value="">请选择栏目</option>
+                                <volist name="channel" id="vo">
+                                    <option value="<!--{$vo.id}-->" <if condition="$pid eq $vo['id']">selected</if>><!--{$vo.html}--><!--{$vo.name}--></option>
+                                </volist>
+                            </select></td>
+                        </tr>
+                        <tr><td>栏目链接</td><td><input type="text" name="url" id="url" class="w300" value=""></td></tr>
+                        <tr><td>显示模板</td><td><input type="text" name="tpl" class="w300" value=""></td></tr>
+                        <tr><td>栏目类型</td>
+                            <td class="buttons-radio">
+                              <label><input type="radio" name="type" value="1">单页面</label>
+                              <label><input type="radio" name="type" value="2" checked>列表页</label>
+                              <label><input type="radio" name="type" value="3">封面页</label>
+                            </td>
+                        </tr>
+                        <tr><td>导航显示</td>
+                            <td  class="buttons-radio">
+                              <label><input type="radio" name="nav" value="1">显示</label>
+                              <label><input type="radio" name="nav" value="0" checked>不显示</label>
+                            </td>
+                        </tr>
+                        <tr><td>关键字</td><td><input type="text" name="keywords" value="" class="w600"></td></tr>
+                        <tr><td>栏目描述</td><td><input type="text" name="description" value="" class="w600"></td></tr>
+                        <tr><td>排序</td><td><input type="text" name="sort" class="w80" value=""></td></tr>
+                        <tr><td>&nbsp;</td><td><input type="submit"value="提交保存" class="btn btn-primary"></td></tr>
+                    </tbody>
+                </table>
+            </form>
+    </div>
+</div>
+</section>
+<include file="Modules/Admin/Template/default/common/footer.html"/>
+<script type="text/javascript" src="/Static/common/js/jQuery.Hz2Py-min.js"></script>
+<script type="text/javascript">
+$(function (){
+    $("#name").hover(function (){
+        $("#url").val($(this).toPinyin());
+    });
+});
+</script>

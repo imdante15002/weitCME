@@ -1,0 +1,37 @@
+<include file="Modules/Admin/Template/default/common/header.html"/>
+<section class="main">
+<div class="panel">
+    <div class="panel-header"><i class="fa fa-user-secret"></i> 用户组</div>
+    <div class="panel-body">
+       <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th width="40">id</th>
+                    <th>用户组名称</th>
+                    <th>颜色</th>
+                    <th>积分</th>
+                    <th width="200">编辑</th>
+                </tr>
+            </thead>
+            <tbody>
+            <volist name="group" id="vo">
+                <tr>
+                    <td><!--{$vo.id}--></td>
+                    <td><!--{$vo.title}--></td>
+                    <td><!--{$vo.color}--></td>
+                    <td><!--{$vo.minscore}-->~<!--{$vo.maxscore}--></td>
+                    <td>
+                        <a href="javascript:;" class="mr10"><i class="fa fa-edit"></i> 编辑</a>
+                        <a href="javascript:;"><i class="fa fa-trash"></i> 删除</a>
+                    </td>
+                </tr>
+           </volist>
+           <tr class="t-tr">
+           		<td colspan="5"><a href="javascript:;" class="btn btn-primary"><i class="fa fa-plus"></i> 添加用户组</a></td>
+           </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+</section>
+<include file="Modules/Admin/Template/default/common/footer.html"/>

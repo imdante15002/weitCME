@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><!--{$g.shortname}--> - 后台管理中心-Powered by Weicme!</title>
+    <link rel="Shortcut Icon" type="image/x-icon" href="__acpimg__/favicon.ico"/>
+    <css file="__acpcss__/font-awesome.min.css"/>
+    <css file="__acpcss__/base.min.css"/>
+    <css file="__acpcss__/extend_common.css"/>
+    <!--[if lt IE 9]>
+    <js file="__cmmjs__/html5.js"/>
+    <![endif]-->
+</head>
+<body>
+<!--[if IE 8]>
+    <div class="low-ie-bar">温馨提示：您现在使用的浏览器版本过低，可能会导致网页部分内容无法正常显示。请立即 <a href="http://www.microsoft.com/china/windows/IE/upgrade/index.aspx" target="_blank">免费升级</a> 或下载使用 <a href="https://www.google.com/intl/zh-CN/chrome/browser/" target="_blank">谷歌浏览器</a>。
+    </div>
+<![endif]-->
+<header class="header">
+    <h2 class="logo z"><a href="<!--{:U('Index/index')}-->" title="返回管理首页">
+        <!-- <img src="__acpimg__/acp_logo.png" alt="DantesCMS Enterprise 内容管理系统" width="160" height="48"></a> -->
+        <i class="fa fa-leaf"></i> WEICMS<span class="xs2">管理系统</span>
+    </h2>
+    <nav class="nav z">
+        <ul>
+          <li><a href="<!--{:U('Index/index')}-->" <if condition="CONTROLLER_NAME eq 'Index'">class="active"</if>><i class="fa fa-home"></i> 首页</a></li>
+          <li><a href="<!--{:U('Config/index')}-->" <if condition="CONTROLLER_NAME eq 'Config'">class="active"</if>><i class="fa fa-cog"></i> 全局</a></li>             
+          <li><a href="<!--{:U('Member/index')}-->" <if condition="CONTROLLER_NAME eq 'Member'">class="active"</if>><i class="fa fa-users"></i> 用户</a></li>
+          <li><a href="<!--{:U('Portal/index')}-->" <if condition="CONTROLLER_NAME eq 'Portal'">class="active"</if>><i class="fa fa-dashboard"></i> 内容</a></li>
+          <li><a href="<!--{:U('Announce/index')}-->" <if condition="CONTROLLER_NAME eq 'Announce'">class="active"</if>><i class="fa fa-puzzle-piece"></i> 运营</a></li>
+          <li><a href="<!--{:U('Tools/index')}-->" <if condition="CONTROLLER_NAME eq 'Tools'">class="active"</if>><i class="fa fa-wrench"></i> 站长</a></li>
+        </ul>
+    </nav>
+    <div class="uinfo">
+        <ul>
+    	   <li><a href="javascript:;"><i class="fa fa-user"></i> <!--{$Think.SESSION.username}--></a></li>
+           <li><a href="javascript:;"><i class="fa fa-bell"></i> 通知</a></li>
+           <li><a href="<!--{$g.siteurl}-->" target="_blank"><i class="fa fa-desktop"></i> 站点首页</a></li>
+           <li><a href="__MODULE__/Public/logout.html" class="xg4"><i class="fa fa-power-off"></i> 注销</a></li>
+        </ul>
+    </div>
+</header>
+<div class="container cl">
+<aside class="aside cl">
+	<ul class="nav-pills">
+		<if condition="CONTROLLER_NAME eq 'Index'">
+		<li <if condition="ACTION_NAME eq 'index'">class="active"</if> ><a href="<!--{:U('Index/index')}-->"><i class="fa fa-home"></i> 管理首页</a></li>
+        <li <if condition="ACTION_NAME eq 'add_article'">class="active"</if>><a href="<!--{:U('Portal/add_article')}-->"><i class="fa fa-plus"></i> 文章发布</a></li>
+		<li <if condition="ACTION_NAME eq 'custommenu'">class="active"</if>><a href="<!--{:U('Index/custommenu')}-->"><i class="fa fa-keyboard-o"></i> 常用菜单管理</a></li>
+   
+        <elseif condition="CONTROLLER_NAME eq 'Member'"/>
+        <li <if condition="(ACTION_NAME eq 'index') or (ACTION_NAME eq 'edUser')">class="active"</if>><a href="<!--{:U('Member/index')}-->"><i class="fa fa-users"></i> 用户管理</a></li> 
+        <li <if condition="ACTION_NAME eq 'adduser'">class="active"</if>><a href="<!--{:U('Member/adduser')}-->"><i class="fa fa-user-plus"></i> 添加用户</a></li> 
+        <li <if condition="ACTION_NAME eq 'msg'">class="active"</if>><a href="<!--{:U('Member/msg')}-->"><i class="fa fa-send"></i> 发送通知</a></li> 
+        <li <if condition="ACTION_NAME eq 'userBan'">class="active"</if>><a href="<!--{:U('Member/userBan')}-->"><i class="fa fa-warning"></i> 禁止用户</a></li> 
+        <li <if condition="ACTION_NAME eq 'reward'">class="active"</if>><a href="<!--{:U('Member/reward')}-->"><i class="fa fa-database"></i> 积分奖惩</a></li> 
+        <li <if condition="ACTION_NAME eq 'members'">class="active"</if>><a href="<!--{:U('Member/members')}-->"><i class="fa fa-crosshairs"></i> 审核用户</a></li> 
+        <li <if condition="ACTION_NAME eq 'usergroup'">class="active"</if>><a href="<!--{:U('Member/usergroup')}-->"><i class="fa fa-user-secret"></i> 用户组</a></li> 
+        <li <if condition="ACTION_NAME eq 'verify'">class="active"</if>><a href="<!--{:U('Member/verify')}-->"><i class="fa fa-user"></i> 认证设置</a></li> 
+    		
+        <elseif condition="CONTROLLER_NAME eq 'Portal'"/>
+        <li <if condition="ACTION_NAME eq 'add_article'">class="active"</if>><a href="<!--{:U('Portal/add_article')}-->"><i class="fa fa-plus"></i> 内容发布</a></li>
+		<li <if condition="ACTION_NAME eq 'index'">class="active"</if>><a href="<!--{:U('Portal/index')}-->"><i class="fa fa-file-word-o"></i> 内容管理</a></li>
+		<li <if condition="ACTION_NAME eq 'topic'">class="active"</if>><a href="<!--{:U('Portal/topic')}-->"><i class="fa fa-tint"></i> 专题管理</a></li>
+        <li <if condition="ACTION_NAME eq 'page'">class="active"</if>><a href="<!--{:U('Portal/page')}-->"><i class="fa fa-file-powerpoint-o"></i> 页面管理</a></li>
+        <li <if condition="ACTION_NAME eq 'slides'">class="active"</if>><a href="<!--{:U('Portal/slides')}-->"><i class="fa fa-photo"></i> 门户幻灯片</a></li>
+		<li <if condition="ACTION_NAME eq 'recommend'">class="active"</if>><a href="<!--{:U('Portal/recommend')}-->"><i class="fa fa-anchor"></i> 首页推荐</a></li>
+    	
+        <elseif condition="CONTROLLER_NAME eq 'Announce'"/>
+        <li <if condition="ACTION_NAME eq 'index'">class="active"</if>><a href="<!--{:U('Announce/index')}-->"><i class="fa fa-bell"></i> 站点公告</a></li>
+		<li <if condition="ACTION_NAME eq 'adv'">class="active"</if>><a href="<!--{:U('Announce/adv')}-->"><i class="fa fa-puzzle-piece"></i> 站点广告</a></li>
+		<li <if condition="ACTION_NAME eq 'magics'">class="active"</if>><a href="<!--{:U('Announce/magics')}-->"><i class="fa fa-paypal"></i> 道具商城</a></li>
+		<li <if condition="ACTION_NAME eq 'flink'">class="active"</if>><a href="<!--{:U('Announce/flink')}-->"><i class="fa fa-link"></i> 友情链接</a></li>
+		<li <if condition="ACTION_NAME eq 'relatedlink'">class="active"</if>><a href="<!--{:U('Announce/relatedlink')}-->"><i class="fa fa-unlink"></i> 关联链接</a></li>
+		
+        <elseif condition="CONTROLLER_NAME eq 'Tools'"/>
+        <li <if condition="ACTION_NAME eq 'index'">class="active"</if>><a href="<!--{:U('Tools/index')}-->"><i class="fa fa-refresh"></i> 更新缓存</a></li>
+        <li <if condition="ACTION_NAME eq 'team'">class="active"</if>><a href="<!--{:U('Tools/team')}-->"><i class="fa fa-users"></i> 管理团队</a></li>
+        <li <if condition="ACTION_NAME eq 'models'">class="active"</if>><a href="<!--{:U('Tools/models')}-->"><i class="fa fa-th-large"></i> 模型列表</a></li>
+        <li <if condition="ACTION_NAME eq 'mail'">class="active"</if>><a href="<!--{:U('Tools/mail')}-->"><i class="fa fa-envelope"></i> 邮件设置</a></li>
+        <li <if condition="ACTION_NAME eq 'counts'">class="active"</if>><a href="<!--{:U('Tools/counts')}-->"><i class="fa fa-coffee"></i> 访问统计</a></li>
+        <li <if condition="ACTION_NAME eq 'safe'">class="active"</if>><a href="<!--{:U('Tools/safe')}-->"><i class="fa fa-circle"></i> 安全中心</a></li>
+        <li <if condition="ACTION_NAME eq 'database'">class="active"</if>><a href="<!--{:U('Tools/database')}-->"><i class="fa fa-database"></i> 数据库</a></li>
+        <li <if condition="ACTION_NAME eq 'update'">class="active"</if>><a href="<!--{:U('Tools/uodate')}-->"><i class="fa fa-upload"></i> 在线升级</a></li>
+
+        <elseif condition="CONTROLLER_NAME eq 'Config'"/>
+        <li <if condition="ACTION_NAME eq 'index'">class="active"</if>><a href="<!--{:U('Config/index')}-->"><i class="fa fa-info-circle"></i> 站点信息</a></li>
+        <li <if condition="ACTION_NAME eq 'navs'">class="active"</if>><a href="<!--{:U('Config/navs')}-->"><i class="fa fa-navicon"></i> 站点导航</a></li>
+        <li <if condition="ACTION_NAME eq 'censor'">class="active"</if>><a href="<!--{:U('Config/censor')}-->"><i class="fa fa-font"></i> 词语过滤</a></li> 
+        <li <if condition="ACTION_NAME eq 'tags'">class="active"</if>><a href="<!--{:U('Config/tags')}-->"><i class="fa fa-tags"></i> 标签管理</a></li> 
+        <li <if condition="ACTION_NAME eq 'cache'">class="active"</if>><a href="<!--{:U('Config/cache')}-->"><i class="fa fa-ticket"></i> 性能优化</a></li>
+        <li <if condition="ACTION_NAME eq 'extend'">class="active"</if>><a href="<!--{:U('Config/extend')}-->"><i class="fa fa-pie-chart"></i> 积分设置</a></li>
+        <li <if condition="ACTION_NAME eq 'upload'">class="active"</if>><a href="<!--{:U('Config/upload')}-->"><i class="fa fa-upload"></i> 上传设置</a></li>
+        <li <if condition="ACTION_NAME eq 'water'">class="active"</if>><a href="<!--{:U('Config/water')}-->"><i class="fa fa-photo"></i> 水印设置</a></li>
+		<li <if condition="ACTION_NAME eq 'mobile'">class="active"</if>><a href="<!--{:U('Config/mobile')}-->"><i class="fa fa-mobile"></i> 手机版设置</a></li>
+		<else/>
+            <li <if condition="ACTION_NAME eq 'index'">class="active"</if> ><a href="<!--{:U('Index/index')}-->">管理首页</a></li>
+            <li <if condition="ACTION_NAME eq 'add_article'">class="active"</if>><a href="<!--{:U('Portal/add_article')}-->">文章发布</a></li>
+            <li <if condition="ACTION_NAME eq 'ui'">class="active"</if>><a href="<!--{:U('Index/ui')}-->">框架UI</a></li>
+            <li <if condition="ACTION_NAME eq 'custommenu'">class="active"</if>><a href="<!--{:U('Index/custommenu')}-->">常用菜单管理</a></li>
+        </if>
+	</ul>
+</aside>

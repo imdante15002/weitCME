@@ -1,0 +1,48 @@
+<include file="Modules/Admin/Template/default/common/header.html"/>
+<section class="main">
+    <div class="panel">
+        <div class="panel-header">发布文章</div>
+        <div class="panel-body">
+            <form action="<!--{:U('PortalHandle/addArticle')}-->" method="post" id="addArticleForm">
+                <table class="table">
+                    <tbody>
+                            <tr>
+                                <td width="60">标题</td>
+                                <td>
+                                    <select name="cid" class="">
+                                        <option value="">栏目</option>
+                                         <volist name="channel" id="vo">
+                                                <option value="<!--{$vo.id}-->" <if condition="$catid eq $vo['id']">selected = "true"</if>><!--{$vo.html}--><!--{$vo.name}--></option>
+                                            </volist>
+                                    </select>
+                                    <input type="text" name="title" class="form-control w600">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>正文</td>
+                                <td><textarea name="body" id="Content"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>关键字</td>
+                                <td><input type="text" name="keywords" class="form-control w480"></td>
+                            </tr>
+                             <tr>
+                                <td>描述</td>
+                                <td><textarea name="description" class="form-control w480" rows="3"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td><input type="submit" class="btn btn-primary" value="立即发布"></td>
+                            </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+</section>
+<include file="Modules/Admin/Template/default/common/footer.html"/>
+<js file="/Static/ueditor/ueditor.config.js"/>
+<js file="/Static/ueditor/ueditor.all.min.js"/>
+<js file="/Static/ueditor/ue_config.js"/>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<include file="Modules/Admin/Template/default/common/header.html"/>
+<section class="main">
+	<div class="panel">
+		<div class="panel-header"><i class="fa fa-leaf"></i> 欢迎使用Weicms v4.0内容管理系统 旗舰版</div>
+	   	<div class="panel-body avg-count">
+		  <div class="col-4"><a href="javascript:;"><i class="xs24 fa fa-file-o"></i><em>文章总数</em><em><!--{$count_article}--></em></a> </div>
+		  <div class="col-4"><a href="javascript:;"><i class="xs24 fa fa-file-text-o"></i><em>帖子总数</em><em><!--{$count_thread}--></em></a></div>
+		  <div class="col-4"><a href="javascript:;"><i class="xs24 fa fa-users"></i><em>用户总数</em><em><!--{$count_member}--></em></a></div>
+		  <div class="col-4"><a href="javascript:;"><i class="xs24 fa fa-eye"></i><em>访问总数</em><em><!--{$totol_views}--></em></a></div>
+		</div>
+	</div>
+	<!-- //基本信息统计 -->
+	<div class="col mt20 mb20">
+		<div class="panel">
+			<div class="panel-header"><i class="fa fa-keyboard-o"></i> 快捷操作</div>
+			<div class="panel-body">
+				<a href="<!--{:U('Portal/add_article')}-->" class="btn btn-default"><i class="fa fa-plus"></i> 发布文章</a>
+				<a href="<!--{:U('Portal/article')}-->" class="btn btn-default"><i class="fa fa-file-o"></i> 文章管理</a>
+				<a href="<!--{:U('Portal/index')}-->" class="btn btn-default"><i class="fa fa-file-text-o"></i> 栏目管理</a>
+				<a href="<!--{:U('Portal/page')}-->" class="btn btn-default"><i class="fa fa-file-powerpoint-o"></i> 页面管理</a>
+				<a href="<!--{:U('Forum/thread')}-->" class="btn btn-default"><i class="fa fa-comment"></i> 帖子管理</a>
+				<a href="<!--{:U('Forum/index')}-->" class="btn btn-default"><i class="fa fa-comments"></i> 版块管理</a>
+			</div>
+		</div>
+	</div>
+	<!-- //快捷操作 -->
+	<div class="col cl">
+		<div class="col-2">
+			<div class="panel mr10">
+				<div class="panel-header"><i class="fa fa-info-circle"></i> 系统信息</div>
+				<div class="panel-body">
+					<ul class="list-group">
+			 			<li>访问地址：<a href="http://<?php echo $_SERVER{'HTTP_HOST'};?>" target="_blank"><?php echo $_SERVER{"HTTP_HOST"};?></a></li>
+			  			<li>服务器IP：<?php echo get_client_ip()?></li>
+			  			<li>PHP版本：<?php echo PHP_VERSION;?></li>
+			  			<li>当前请求时间：<!--{$Think.NOW_TIME|date="Y-m-d H:i:s",###}--></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-2">
+			<div class="panel ml10">
+				<div class="panel-header"><i class="fa fa-info-circle"></i> 程序信息</div>
+				<div class="panel-body">
+					<ul class="list-group">
+					  	<li>程序版本：WeiTCMs v4.0 <a href="http://weitcms.wei2.wang" target="_blank">访问官网</a></li>
+					  	<li>授权：<a href="javascript:;">获取授权</a></li>
+					  	<li>程序支持：<a href="http://www.wei2.wang">微图网</a></li>
+					  	<li>联系QQ：<a href="http://wpa.qq.com/msgrd?v=3&uin=763093576&site=qq&menu=yes">QQ在线</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section><!--//End main -->
+<include file="Modules/Admin/Template/default/common/footer.html"/>

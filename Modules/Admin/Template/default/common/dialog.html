@@ -1,0 +1,63 @@
+<?php
+    if(C('LAYOUT_ON')) {
+        echo '{__NOLAYOUT__}';
+    }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><present name="message"><?php echo($message); ?><else/><?php echo($error); ?></present> - 后台管理中心-powered by dantes!</title>
+    <css file="__acpcss__/base.min.css"/>
+    <css file="__acpcss__/extend_common.css"/>
+    <!--[if lt IE 9]>
+    <js file="__cmmjs__/html5.js"/>
+    <![endif]-->
+     <style>
+     body { font-family: "Microsoft YaHei";}
+        .system-message { overflow: hidden ;margin:10% auto 0;width:500px; height: auto; border:1px solid #d8d8d8; background-color: #fff;}
+        .panel h1 { padding:0; margin:0; font-size: 8em; text-align: center;}
+        .ms-box { overflow: hidden; padding:15px 15px 20px; text-align: center; }
+        .jump { text-align: center; padding:0 10px 10px 10px; line-height: 40px; border-top:1px solid #f1f1f1; }
+        .ms-title { padding-bottom: 10px; font-size:16px; border-bottom: 1px dashed #d8d8d8;}
+        #wait,.jump a{  color:#f80; font-size:12px;}
+        .logo { background-color: transparent; float: none; width: auto;}
+        .panel-footer { font-size:12px;}
+        .panel { box-shadow:0px 0px 10px #dfdfdf; border-radius:3px;}
+    </style>
+</head>
+<body>
+<header class="header">
+    <h2 class="logo z"><a href="javascript:;"><i class="fa fa-leaf"></i> WEICMS<span class="xs2">管理系统</span></a>
+    </h2>
+</header>
+<div class="main-dialog">
+    <div class="system-message panel">
+            <div class="panel-header">
+                <b><span class="glyphicon glyphicon-info-sign"></span> 转跳提示：</b><present name="message"><?php echo($message); ?><else/><?php echo($error); ?></present>
+            </div>
+            <div class="panel-body hm">
+                <present name="message">
+                    <img src="__acpimg__/success.png" alt="">
+                <else/>
+               <img src="__acpimg__/error.png" alt="">
+                </present>
+            </div>
+            <div class="panel-footer hm">
+                页面自动 <a id="href" href="<?php echo($jumpUrl); ?>">跳转</a> 等待时间： <b id="wait"><?php echo($waitSecond); ?></b>
+            </div>
+    </div>
+</div>
+    <script type="text/javascript">
+    (function(){
+    var wait = document.getElementById('wait'),href = document.getElementById('href').href;
+    var interval = setInterval(function(){
+        var time = --wait.innerHTML;
+        if(time <= 0) {
+            location.href = href;
+            clearInterval(interval);
+        };
+    }, 1000);
+    })();
+    </script>
+</div>

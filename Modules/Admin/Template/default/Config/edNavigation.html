@@ -1,0 +1,35 @@
+<include file="Modules/Admin/Template/default/common/header.html"/>
+<section class="main">
+	<div class="panel">
+		<div class="panel-header"><i class="fa fa-navicon"></i> [<!--{$ed.name}-->]编辑导航</div>
+		<div class="panel-body">
+			<form action="<!--{:U('ConfigHandle/edNavigation')}-->" method="post">
+                <input type="hidden" name="id" value="<!--{$ed.id}-->">
+                <table class="table">
+                    <tbody>
+                        <tr><td width="60">名称</td><td><input type="text" name="name" class=" w300" value="<!--{$ed.name}-->"></td></tr>
+                        <tr><td width="60">导航链接</td><td><input type="text" name="url" class=" w300" value="<!--{$ed.url}-->"></td></tr>
+                        <tr><td>导航显示</td>
+                            <td  class="buttons-radio">
+                              <label><input type="radio" name="nav" value="1" <if condition="$ed['nav'] eq 1">checked</if>>显示</label>
+                              <label><input type="radio" name="nav" value="0" <if condition="$ed['nav'] eq 0">checked</if>>不显示</label>
+                            </td>
+                        </tr>
+                        <tr><td>风格</td>
+                            <td  class="buttons-radio">
+                              <label><input type="radio" name="style" value="0" <if condition="$ed['style'] eq 1">checked</if>>默认</label>
+                              <label><input type="radio" name="style" value="1" <if condition="$ed['style'] eq 0">checked</if>>独立风格</label>
+                            </td>
+                        </tr>
+                        <tr><td width="60">模板</td><td><input type="text" name="tpl" class=" w300" value="<!--{$ed.tpl}-->"></td></tr>
+                        <tr><td width="60">关键字</td><td><input type="text" name="keywords" class=" w500" value="<!--{$ed.keywords}-->"></td></tr>
+                        <tr><td width="60">描述</td><td><input type="text" name="description" class=" w500" value="<!--{$ed.description}-->"></td></tr>
+                        <tr><td>排序</td><td><input type="text" name="sort" class="w80" value="<!--{$ed.sort}-->"></td></tr>
+                        <tr><td>&nbsp;</td><td><input type="submit"value="保存" class="btn btn-primary"></td></tr>
+                    </tbody>
+                </table>
+            </form>
+		</div>
+	</div>
+</section>
+<include file="Modules/Admin/Template/default/common/footer.html"/>

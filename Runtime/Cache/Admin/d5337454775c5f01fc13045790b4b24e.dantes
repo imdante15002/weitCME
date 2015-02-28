@@ -1,0 +1,48 @@
+<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?php echo ($g["shortname"]); ?>-后台管理中心-powered by dantes!</title>
+    <link rel="Shortcut Icon" type="image/x-icon" href="/Static/admin/images/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="/Static/admin/css/base.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Static/admin/css/font-awesome.min.css" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/Static/common/js/html5.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        body { font-family: "Microsoft YaHei"; background-color: #f6f7f6;}
+        .panel { margin:0 auto; margin-top:100px;  width: 300px; box-shadow:0px 0px 26px #ececec; background-color: #fff;}
+        .panel .panel-heading { padding:0 15px; text-align:center; height: 45px; line-height: 45px; font-size:14px; border-top:5px solid #1fa67a; border-bottom: 1px solid #eee; font-weight: 700;}
+        .panel .panel-body { padding:20px;}
+        .forum-contral { padding:8px 10px !important; padding-left:30px !important; width: 218px; height: 20px;line-height: 20px; border:1px solid #e1e1e1; border-radius: 1px; font-size: 14px; color: #777;}
+        .forum-contral:hover,.forum-contral:focus { border-color: #1fa67a;-webkit-transition-duration:.5s;-moz-transition-duration:.5s;-o-transition-duration:.5s;transition-duration:.5s;-ms-transition-duration:.5s;}
+        .panel li { position: relative; padding:5px 0;}
+        .panel li span { position: absolute; padding:2px 5px; left: 5px; top:11px; color:#666; font-size:16px;}
+        #verifyImg { overflow: hidden; padding:2px; vertical-align: middle; border:1px solid #eee; border-radius: 1px; cursor:pointer;}
+        input[type="submit"] { display: block; width: 100%; padding:12px 0; cursor: pointer; border-radius:1px; background-color: #1fa67a; color:#fff; border:none; font-size: 14px; text-align: center;}
+        input[type="submit"]:hover { background-color: #0C845D;-webkit-transition-duration:.5s;-moz-transition-duration:.5s;-o-transition-duration:.5s;transition-duration:.5s;-ms-transition-duration:.5s;}
+    </style>
+</head>
+<body>
+<div class="panel"> 
+   <div class="panel-heading"><i class="fa fa-leaf"></i> WEICMS后台管理登录</div>
+    <div class="panel-body">
+        <form action="<?php echo U('Public/login_do');?>" method="post" >
+            <li><span><i class="fa fa-user"></i></span><input type="text" name="username" class="forum-contral"></li>
+            <li><span><i class="fa fa-file-powerpoint-o"></i></span><input type="password" name="password" class="forum-contral"></li>
+            <li><span><i class="fa fa-tint"></i></span><input type="text" name="verify" class="forum-contral"></li>
+            <li><img src="<?php echo U('Public/verify');?>" id="verifyImg" onclick="fleshVerify()" width="254"></li>
+            <li><input type="submit" value="安全登录"></li>
+        </form>
+    </div>
+</div>
+
+<script language="JavaScript">
+     function fleshVerify(){ 
+        //重载验证码
+        var time = new Date().getTime();
+            document.getElementById('verifyImg').src= '<?php echo U('Public/verify','','');?>/'+time;
+     }
+ </script>

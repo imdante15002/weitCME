@@ -1,0 +1,54 @@
+<include file="Modules/Admin/Template/default/common/header.html"/>
+<section class="main">
+  <div class="info-title">编辑栏目 
+        <span class="xs4">
+            <a href="<!--{:U('Portal/addChannel')}-->">+添加栏目</a>
+        </span>
+    </div>
+    <div class="col cl">
+            <form action="<!--{:U('PortalHandle/edChannel')}-->" method="post">
+                <input type="hidden" name="id" value="<!--{$ed.id}-->">
+                <table class="table">
+                    <tbody>
+                        <tr><td width="60">名称</td><td><input type="text" name="name" id="name" class="w300" value="<!--{$ed.name}-->"></td></tr>
+                        <tr><td>上级</td>
+                            <td><select name="pid">
+                                    <option value="">请选择栏目</option>
+                                <volist name="channel" id="vo">
+                                    <option value="<!--{$vo.id}-->" <if condition="$pid eq $vo['id']">selected</if>><!--{$vo.html}--><!--{$vo.name}--></option>
+                                </volist>
+                            </select></td>
+                        </tr>
+                        <tr><td>栏目链接</td><td><input type="text" name="url" id="url" class="w300" value="<!--{$ed.url}-->"></td></tr>
+                        <tr><td>显示模板</td><td><input type="text" name="tpl" class="w300" value="<!--{$ed.tpl}-->"></td></tr>
+                        <tr><td>栏目类型</td>
+                            <td class="buttons-radio">
+                              <label><input type="radio" name="type" value="1" <if condition="$ed['type'] eq 1">checked</if>>单页面</label>
+                              <label><input type="radio" name="type" value="2" <if condition="$ed['type'] eq 2">checked</if>>列表页</label>
+                              <label><input type="radio" name="type" value="3" <if condition="$ed['type'] eq 3">checked</if>>封面页</label>
+                            </td>
+                        </tr>
+                        <tr><td>导航显示</td>
+                            <td  class="buttons-radio">
+                              <label><input type="radio" name="nav" value="1" <if condition="$ed['nav'] eq 1">checked</if>>显示</label>
+                              <label><input type="radio" name="nav" value="0" <if condition="$ed['nav'] eq 0">checked</if>>不显示</label>
+                            </td>
+                        </tr>
+                        <tr><td>关键字</td><td><input type="text" name="keywords" value="<!--{$ed.keywords}-->" class="w600"></td></tr>
+                        <tr><td>栏目描述</td><td><input type="text" name="description" value="<!--{$ed.description}-->" class="w600"></td></tr>
+                        <tr><td>排序</td><td><input type="text" name="sort" class="w80" value="<!--{$ed.sort}-->"></td></tr>
+                        <tr><td>&nbsp;</td><td><input type="submit"value="提交保存"></td></tr>
+                    </tbody>
+                </table>
+            </form>
+    </div>
+</section>
+<include file="Modules/Admin/Template/default/common/footer.html"/>
+<script type="text/javascript" src="/Static/common/js/jQuery.Hz2Py-min.js"></script>
+<script type="text/javascript">
+$(function (){
+    $("#name").hover(function (){
+        $("#url").val($(this).toPinyin());
+    });
+});
+</script>

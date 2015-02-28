@@ -1,0 +1,99 @@
+<include file="Modules/Admin/Template/default/common/header.html"/>
+<section class="main">
+  <div class="info-title">添加栏目 
+        <span class="xs4">
+            <a href="<!--{:U('Portal/index')}-->">>>返回</a>
+        </span>
+    </div>
+    <div class="col cl">
+            <form action="<!--{:U('PortalHandle/addChannelAll')}-->" method="post">
+                <table class="table">
+                    <thead>
+                        <th>名称</th>
+                        <th>链接</th>
+                        <th>类型</th>
+                        <th>导航</th>
+                        <th>排序</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <input type="hidden" name="id[]" value="0">
+                            <td><input type="text" name="name[]" id="name" class=" w240" value=""></td>
+                            <td width="240"><input type="text" name="url[]" id="url" class="w120" value=""></td>
+                            <td class="buttons-radio" width="240">
+                              <label><input type="checkbox" name="type[]" value="1">单页</label>
+                              <label><input type="checkbox" name="type[]" value="2" checked>列表</label>
+                              <label><input type="checkbox" name="type[]" value="3">封面</label>
+                            </td>
+                            <td  class="buttons-radio" width="150">
+                              <label><input type="checkbox" name="nav[]" value="1">显示</label>
+                              
+                            </td>
+                            <td width="80"><input type="text" name="sort[]" class=" form-sort w40" value="0"></td>
+                        </tr>
+                          <tr>
+                            <input type="hidden" name="id[]" value="0">
+                            <td><input type="text" name="name[]" id="name" class=" w240" value=""></td>
+                            <td width="240"><input type="text" name="url[]" id="url" class="w120" value=""></td>
+                            <td class="buttons-radio" width="240">
+                              <label><input type="checkbox" name="type[]" value="1">单页</label>
+                              <label><input type="checkbox" name="type[]" value="2" checked>列表</label>
+                              <label><input type="checkbox" name="type[]" value="3">封面</label>
+                            </td>
+                            <td  class="buttons-radio" width="150">
+                              <label><input type="checkbox" name="nav[]" value="1">显示</label>
+                              
+                            </td>
+                            <td width="80"><input type="text" name="sort[]" class=" form-sort w40" value="0"></td>
+                        </tr> <tr>
+                            <input type="hidden" name="id[]" value="0">
+                            <td><input type="text" name="name[]" id="name" class=" w240" value=""></td>
+                            <td width="240"><input type="text" name="url[]" id="url" class="w120" value=""></td>
+                            <td class="buttons-radio" width="240">
+                              <label><input type="checkbox" name="type[]" value="1">单页</label>
+                              <label><input type="checkbox" name="type[]" value="2" checked>列表</label>
+                              <label><input type="checkbox" name="type[]" value="3">封面</label>
+                            </td>
+                            <td  class="buttons-radio" width="150">
+                              <label><input type="checkbox" name="nav[]" value="1">显示</label>
+                              
+                            </td>
+                            <td width="80"><input type="text" name="sort[]" class=" form-sort w40" value="0"></td>
+                        </tr> <tr>
+                            <input type="hidden" name="id[]" value="0">
+                            <td><input type="text" name="name[]" id="name" class=" w240" value=""></td>
+                            <td width="240"><input type="text" name="url[]" id="url" class="w120" value=""></td>
+                            <td class="buttons-radio" width="240">
+                              <label><input type="checkbox" name="type[]" value="1">单页</label>
+                              <label><input type="checkbox" name="type[]" value="2" checked>列表</label>
+                              <label><input type="checkbox" name="type[]" value="3">封面</label>
+                            </td>
+                            <td  class="buttons-radio" width="150">
+                              <label><input type="checkbox" name="nav[]" value="1">显示</label>
+                              
+                            </td>
+                            <td width="80"><input type="text" name="sort[]" class=" form-sort w40" value="0"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5"><a href="javascript:;" class="clone_tr_click">+新增一栏</a></td>
+                        <tr>
+                            <td colspan="5"><input type="submit"value="提交保存"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+    </div>
+</section>
+<include file="Modules/Admin/Template/default/common/footer.html"/>
+<script type="text/javascript" src="/Static/common/js/jQuery.Hz2Py-min.js"></script>
+<script type="text/javascript">
+$(function (){
+    $("#name").hover(function (){
+        $("#url").val($(this).toPinyin());
+    });
+    $('.clone_tr_click').click(function(){
+        var tr =$(".clone_tr:last").clone(true);
+        $(".clone_tr").after(tr);
+    })
+});
+</script>

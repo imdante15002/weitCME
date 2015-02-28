@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+	<title>发布成功！ - <!--{$g.sitename}--></title>
+	<include file="Public/Common/style.html" />
+	<style>
+		.state-jump-box { overflow:hidden; margin:100px auto 300px; width:600px; height:auto; background-color:#fff;
+			box-shadow:2px 3px 5px #dfdfdf;}
+		.state-header { padding:10px 20px; height:40px; line-height:40px; font-size:20px; border-bottom:1px dashed #efefef; border-top:3px solid #dfdfdf;}
+		.state-body { overflow:hidden; padding:20px; font-size:16px;}
+		.state-footer { overflow:hidden; padding:0 20px; padding-bottom:30px; height:40px; line-height:40px; font-size:14px; text-align:center;}
+		.state-footer a { padding:0 10px;}
+		.state-footer a:hover {  color:#a4bb37; text-decoration:underline;}
+	</style>
+</head>
+<body>
+<div class="container">
+	<include file="Public/Home/header.html" />
+	<div class="wp cl">
+		<div class="state-jump-box">
+			<div class="state-header"><i class="fa fa-check"></i> 成功发布帖子</div>
+			<div class="state-body"><a href="<!--{$g.siteurl}-->/thread/<!--{$nth.tid}-->.html"><!--{$nth.title}--></a></div>
+			<div class="state-footer">
+				<a href="<!--{$g.siteurl}-->/thread/<!--{$nth.tid}-->.html">查看帖子</a>
+				<a href="<!--{$g.siteurl}-->/member.php/post.html">继续发布帖子</a>
+			</div>
+		</div>
+	</div>
+	<include file="Public/Home/footer.html" />

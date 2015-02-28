@@ -1,0 +1,84 @@
+<include file="Modules/Admin/Template/default/common/header.html"/>
+<section class="main">
+    <div class="panel">
+    <div class="panel-header"><i class="fa fa-plus"></i> 添加用户</div>
+    <div class="panel-body">
+        <form action="<!--{:U('MemberHandle/addUser')}-->" method="post">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td width="80" align="right">用户名</td>
+                        <td><input type="text" name="username" value="" class="username w200"></td>
+                    </tr>
+                    <tr>
+                        <td width="80" align="right">邮箱</td>
+                        <td><input type="text" name="email" value="" class="email w240"></td>
+                    </tr>
+                     <tr>
+                        <td width="80" align="right">密码</td>
+                        <td><input type="password" name="password" id="pass" class="w200"></td>
+                    </tr>
+                     <tr>
+                        <td width="80" align="right">重复密码</td>
+                        <td><input type="password" name="repassword" id="repass" class="w200"></td>
+                    </tr>
+                    <tr>
+                        <td width="80" align="right">用户组</td>
+                        <td>
+                            <select name="group_id">
+                                <option value="">选择用户组</option>
+                                <volist name="admin" id="vo">
+                                    <option value="<!--{$vo.id}-->"><!--{$vo.title}--></option>
+                                </volist>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" id="submit" value="确认添加" class="btn btn-primary"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    </div>
+</section>
+<include file="Modules/Admin/Template/default/common/footer.html"/>
+<script type="text/javascript">
+    $(function(){
+        $("form :input").blur(function(){
+               $(this).parent().find(".error").remove();
+            if ($(this).is("#repass")) {
+                var tag = $("<span class='error ml10 text-waring'>两次输入密码不一致</span>");
+                var pass=$("#pass").val();
+                var repass=$("#repass").val();
+                if (pass==repass) {
+                    $("#pass").removeClass('passerror');
+                    $("#repass").removeClass('passerror');
+                    $("#submit").removeAttr('disabled','true');
+                }else{
+                    $('#pass').addClass('passerror');
+                    $('#repass').addClass('passerror');
+                    $("#submit").attr('disabled','true');
+                    $("#repass").parent().append(tag)
+                }
+            };
+            if ($(this).is('.username')) {
+                if (this.value == "" || this.value != $(".username").val()) {
+                    var tag = $("<span class='error ml10 text-waring'>用户名不能为空</span>");
+                    $(this).parent().append(tag);
+                    $("#submit").attr('disabled','true');
+                };
+
+            };
+            if ($(this).is('.email')) {
+                if (this.value == "" || this.value != $(".email").val()) {
+                    var tag = $("<span class='error ml10 text-waring'>邮箱不能为空,为用户唯一登录凭证</span>");
+                    $(this).parent().append(tag)
+                    $("#submit").attr('disabled','true');
+                };
+
+            };
+        })
+    })
+</script>

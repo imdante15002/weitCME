@@ -1,0 +1,25 @@
+<include file="Modules/Admin/Template/default/common/header.html"/>
+<section class="main">
+	<div class="panel">
+		<div class="panel-header"><i class="fa fa-navicon"></i> 添加导航</div>
+		<div class="panel-body">
+			<form action="<!--{:U('ForumHandle/addForum')}-->" method="post">
+                <table class="table">
+                    <tbody>
+                        <tr><td width="60">名称</td><td><input type="text" name="name" class=" w300" value=""></td></tr>
+                        <tr><td width="60">导航链接</td><td><input type="text" name="url" class=" w300" value=""></td></tr>
+                        <tr><td>导航显示</td>
+                            <td  class="buttons-radio">
+                              <label><input type="radio" name="nav" value="1">显示</label>
+                              <label><input type="radio" name="nav" value="0" checked>不显示</label>
+                            </td>
+                        </tr>
+                        <tr><td>排序</td><td><input type="text" name="sort" class="w80" value=""></td></tr>
+                        <tr><td>&nbsp;</td><td><input type="submit"value="提交保存" class="btn btn-primary"></td></tr>
+                    </tbody>
+                </table>
+            </form>
+		</div>
+	</div>
+</section>
+<include file="Modules/Admin/Template/default/common/footer.html"/>

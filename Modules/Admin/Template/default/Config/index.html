@@ -1,0 +1,27 @@
+<include file="Modules/Admin/Template/default/common/header.html"/>
+<section class="main">
+    <div class="panel">
+          <div class="panel-header"><i class="fa fa-info-circle"></i> 基础信息</div>
+          <div class="panel-body">
+             <form action="<!--{:U('Config/upsite')}-->" method="post">
+                <table class="table table-form">
+                    <tbody>
+                        <input type="hidden" name="id" value="<!--{$g.id}-->">
+                        <tr><td width="80" align="right">站点名称</td><td><input type="text" class="w300" name="sitename" value="<!--{$g.sitename}-->"></td></tr>
+                        <tr><td align="right">站点url</td><td><input type="text" name="siteurl" class="w300" value="<!--{$g.siteurl}-->"></td></tr>
+                        <tr><td align="right">短名称</td><td><input type="text" name="shortname" class="w300" value="<!--{$g.shortname}-->"></td></tr>
+                        <tr><td align="right">QQ</td><td><input type="text" name="qq" class="w300" value="<!--{$g.qq}-->"></td></tr>
+                        <tr><td align="right">邮箱</td><td><input type="text" name="email" class="w300" value="<!--{$g.email}-->"></td></tr>
+                        <tr><td align="right">联系电话</td><td><input type="text" name="mobile" class="w300" value="<!--{$g.mobile}-->"></td></tr>
+                        <tr><td align="right">icp备案</td><td><input type="text" name="icp" class="w300" value="<!--{$g.icp}-->"></td></tr>
+                        <tr><td align="right">统计代码</td><td><textarea name="count" class="w600" rows="6"><!--{$g.count}--></textarea></td></tr>
+                        <tr><td align="right">关键字</td><td><input type="text" name="keywords" class="w400" value="<!--{$g.keywords}-->"></td></tr>
+                        <tr><td align="right">站点描述</td><td><input type="text" name="description" class="w400" value="<!--{$g.description}-->"></td></tr>
+                        <tr><td>&nbsp;</td><td><input type="submit" class="btn btn-primary" value="保存"></td></tr>
+                    </tbody>
+                </table>
+            </form>
+          </div>
+    </div>
+</section><!--//End main -->
+<include file="Modules/Admin/Template/default/common/footer.html"/>

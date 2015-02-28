@@ -1,0 +1,29 @@
+@charset "utf-8";
+/**
+ * 用户中心 信息头
+ * @type {[type]}
+ */
+body{background-color: rgb(241, 242, 243);}
+.home-user-diy-img { overflow: hidden; width: 100%; height: 200px; background-color: #333}
+.home-user-nav { overflow: hidden; height: 40px; line-height: 40px; background-color: #fff;border-bottom: 1px solid #dfdfdf}
+	.home-user-nav li { float: left;}
+		.home-user-nav li a{ display:block; padding:0 10px; font-size:16px;}
+			.home-user-nav li.cur a { background-color: rgb(223,92,84); color: #fff}
+/*//用户侧边栏*/
+.home-aside { float: right; top:-1px; padding:0 20px; padding-bottom: 200px; width: 280px; height:400px;  background: #fff url(../images/aside_bg.png) repeat-x bottom left;}
+	.aisde-user-info-col { padding-top:100px;}
+	.aside-user-img,.aside-user-defalut-img { display: block;position: absolute; top:-100px; right: 50%; margin-right:-95px;  width: 180px; height: 180px; background-color: #fff; border-radius: 180px; border:10px solid rgba(255,255,255,0.2);
+		background-clip:border-box;-webkit-background-clip:border;-moz-background-clip:padding;-webkit-background-clip:padding;-moz-background-clip:content;-webkit-background-clip:content}
+	.aside-user-defalut-img { overflow: hidden; color: #e7e7e7; text-align: center; line-height: 180px; font-size:200px;}
+	.aside-user-count { overflow: hidden; padding:10px 0; padding-left:1px; height: auto;text-align: center; font-size:14px; color: #666}
+		.aside-user-count li { float: left; width: 33%; padding:10px 0; border-right:1px solid #efefef; margin-left: -1px; }
+		.aside-user-count li.brdnone{ border-right: none;}
+.aside-user-header { font-size:16px;margin-bottom: 10px; color: #666}
+/*用户中心主内容区域*/
+.home-main { float: left;  width: 780px; height: auto; min-height: 400px;}
+	.home-main-header { padding-bottom: 8px; color: #666; border-bottom: 1px solid rgb(234,234,234)}
+	.home-main .article-text { padding:10px 0; line-height: 1.5; font-size: 14px;}
+
+.home-main-post-tab {overflow: hidden; width: auto; margin-bottom: 15px; height: 40px; line-height: 40px; background-color: #f8f8f8; border:1px solid #dfdfdf; border-radius: 2px; }
+.home-main-post-tab li { float: left; padding:0 10px; font-size: 16px;  border-right: 1px solid #dfdfdf; cursor: pointer;}
+	.home-main-post-tab li.cur { background-color: #fff; box-shadow: inset 1px 2px 3px #efefef}

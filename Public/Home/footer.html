@@ -1,0 +1,53 @@
+<footer class="footer">
+	<div class="wp cl">
+		<div class="static hm xs2">
+			<a href="<!--{$g.siteurl}-->/about.html" class="first">关于我们</a>
+			<a href="<!--{$g.siteurl}-->/flow.html">免责申明</a>
+			<a href="<!--{$g.siteurl}-->/adv.html">广告服务</a>
+			<a href="<!--{$g.siteurl}-->/flink.html">友情链接</a>
+			<a href="<!--{$g.siteurl}-->/sitemap.html">网站导航</a>
+			<a href="<!--{$g.siteurl}-->/join.html">加入我们</a>
+		</div>
+		<div class="copy hm">	
+			<p>免责声明：本站所有内容均来自正规视频站点所提供的公开引用资源</p>
+			<p>&copy;COPYRIGHT 2014 <a href="<!--{$g.siteurl}-->">wei2.wang</a> ALL RIGHTS RESERVED.<a href="http://www.miibeian.gov.cn/" target="_blank"><!--{$g.icp}--></a></p>
+		</div>
+		<div class="copyright"></div>
+	</div>
+</footer>
+<empty name="guid">
+<div class="dialog-msk" id="#login-modal"></div>
+<div class="dialog" id="login-modal">
+	<div class="dialog-header">
+		<span class="y cls" id="#login-modal"><i class="fa fa-close"></i></span>
+		用户登录
+	</div>
+	<div class="dialog-body">
+		<form action="/member.php/logindo.html" method="post">
+			<div class="form-group"><i class="fa fa-envelope"></i><input type="text" name="email" class="form-control w200 form-control-lg" placeholder="输入您的注册邮箱"></div>
+			<div class="form-group"><i class="fa fa-file-powerpoint-o"></i><input type="password" name="password" class="form-control w200 form-control-lg" placeholder="密码"></div>
+			<div class="form-group"><input type="submit" value="立即登录" class="btn btn-primary mr10 btn-lg"><a href="" class="btn btn-reg">注册</a></div>
+			<div class="form-group">忘记密码?</div>
+		</form>
+	</div>
+</div>
+</empty>
+</div><!-- //end container -->
+<js file="__cmmjs__/jquery-1.11.1.min.js"/>
+<js file="__cmmjs__/jquery.lazyFade.js"/>
+<js file="__homejs__/extend_common.min.js"/>
+<script type="text/javascript">
+	//$('.container div,.container section').lazyFade({reverse: false,duration: 250,delay: 100,opacity: {start: 0.01,end: 1}});
+</script>
+<if condition="CONTROLLER_NAME eq 'Index'">
+<js file="__cmmjs__/jquery.slide.js"/>
+<script type="text/javascript">
+$(function(){
+	$(".slide,.forum-slide").slide({
+		affect:4,
+		time:4000,
+		speed:400,
+	});
+})
+</script>
+</if>

@@ -1,0 +1,35 @@
+<include file="Modules/Admin/Template/default/common/header.html"/>
+<section class="local-name">
+	<strong class="xs6 normal">友情链接编辑</strong>
+</section>
+<section class="main">
+   	<div class="panel panel-default">
+		  <div class="panel-heading"><span class="glyphicon glyphicon-th-large"></span> 编辑信息</div>
+		  <div class="panel-body">
+		    <form action="<!--{:U('OperateHandle/edFlink')}-->" method="post">
+		    	<input type="hidden" name="id" value="<!--{$link.id}-->">
+	            <table class="table">
+	                <tbody>
+	                    <tr>
+	                        <td>名称</td>
+	                        <td><input type="text" name="linkname" class="form-control w360" value="<!--{$link.linkname}-->"></td>
+	                    </tr>
+	                    <tr>
+	                        <td>链接地址</td>
+	                        <td><input type="text" name="linkurl" class="form-control w360" value="<!--{$link.linkurl}-->"></td>
+	                    </tr>
+	                    <tr>
+	                        <td>排序</td>
+	                        <td><input type="text" name="sort" class="form-control w80" value="<!--{$link.sort}-->"></td>
+	                    </tr>
+	                    <tr>
+	                        <td>&nbsp;</td>
+	                        <td><input type="submit" class="btn btn-success" value="保存"></td>
+	                    </tr>
+	                </tbody>
+	            </table>
+        	</form>
+		  </div>
+	</div>
+</section><!--//End main -->
+<include file="Modules/Admin/Template/default/common/footer.html"/>

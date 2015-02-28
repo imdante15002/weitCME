@@ -1,0 +1,29 @@
+<header class="header cl">
+	<section class="wp cl">
+		<h2 class="logo"><a href="<!--{$g.siteurl}-->"><img src="__homeimg__/logo.jpg" alt="<!--{$g.sitename}-->,<!--{$g.keywords}-->"></a></h2>
+		<nav class="nav z cl">
+			<ul>
+				<li><a href="<!--{$g.siteurl}-->"><i class="fa fa-home"></i> 首页</a></li>
+				<volist name="channel" id="vo">
+					<if condition="$vo['nav'] eq 1">
+						<li><a href="<!--{$g.siteurl}-->/<!--{$vo.url}-->/"><!--{$vo.name}--></a></li>
+					</if>
+				</volist>
+				<li>
+					<a class="nav-more"><i class="fa fa-th"></i></a>
+					<ul class="all_nav">
+					<volist name="channel" id="vo">
+					<if condition="$vo['nav'] neq 1">
+						<li><a href="<!--{$g.siteurl}-->/<!--{$vo.url}-->/"><!--{$vo.name}--></a></li>
+					</if>
+					</volist>
+					</ul>
+				</li>
+				
+				<li><a class="nav-search"><i class="fa fa-search"></i></a></li>
+			</ul>
+		</nav>
+		<include file="Public/common/user_block.html"/>
+	</section>
+</header>
+<if condition="MODULE_NAME neq 'Member'"><div class="tw cl"></div></if>

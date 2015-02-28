@@ -1,0 +1,14 @@
+<div class="home-user-diy-img cl">
+	
+</div>
+<!-- 用户自定义头部 背景 -->
+<nav class="home-user-nav cl">
+	<ul class="wp">
+		<li <if condition="ACTION_NAME eq 'index'">class="cur"</if>><a href="<!--{$g.siteurl}-->/member.php/home/<!--{$user.uid}-->.html">首页</a></li>
+		<li <if condition="ACTION_NAME eq 'thread'">class="cur"</if>><a href="<!--{$g.siteurl}-->/member.php/thread/<!--{$user.uid}-->.html"><!--{$whos}-->帖子</a></li>
+		<li <if condition="ACTION_NAME eq 'reply'">class="cur"</if>><a href="<!--{$g.siteurl}-->/member.php/reply/<!--{$user.uid}-->.html"><!--{$whos}-->回复</a></li>
+		<li <if condition="ACTION_NAME eq 'flow'">class="cur"</if>><a href="<!--{$g.siteurl}-->/member.php/flow/<!--{$user.uid}-->.html"><!--{$whos}-->关注</a></li>
+		<li <if condition="ACTION_NAME eq 'record'">class="cur"</if>><a href="<!--{$g.siteurl}-->/member.php/record/<!--{$user.uid}-->.html"><!--{$whos}-->收藏</a></li>
+	</ul>
+</nav>
+<!-- 用户中心导航 -->

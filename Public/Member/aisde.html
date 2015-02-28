@@ -1,0 +1,36 @@
+<!-- 用户中心侧边栏 -->
+<aside class="home-aside relative">
+	<div class="aisde-user-info-col">
+		<a href="<!--{$g.siteurl}-->/member.php/config/reavtar/<!--{$user.uid}-->.html">
+		<empty name="user.avtimg">
+		<span class="aside-user-defalut-img"><i class="fa fa-user"></i></span>
+		<else/>
+			<img src="<!--{$user.avtimg}-->" class="aside-user-img">
+		</empty>
+		</a>
+		<h3 class="xs20 normal hm"><!--{$user.username}--></h3>
+		<ul class="aside-user-count">
+			<span style="color:#<!--{$group.color}-->"><i class="fa fa-user"></i> <!--{$group.title|default="普通会员"}--></span>
+			<span class="pipe">|</span>
+			<i class="fa fa-cube" title="积分"></i> <!--{$score.score1|default="0"}-->
+			<span class="pipe">|</span>
+			<i class="fa fa-ils" title="文币"></i> <!--{$score.score2|default="0"}-->
+		</ul>  
+		<ul class="aside-user-count">
+			<li>帖子<p class="xs8"><!--{$threadcount|default="0"}--></p></li>
+			<li>回复<p class="xs8"><!--{$replycount|default="0"}--></p></li>
+			<li class="brdnone">浏览<p class="xs8"><!--{$user.views|default="0"}--></p></li>
+		</ul>
+	</div>
+	<div class="mb20 cl"></div>
+	<div class="aside-user-view">
+		<div class="aside-user-header"><!--{$whos}-->关注 关注<!--{$whos}--></div>
+		<div class="aside-user-list"></div>
+	</div>
+	<div class="mb20 cl"></div>
+	<div class="aside-user-view">
+		<div class="aside-user-header">最近访客</div>
+		<div class="aside-user-list"></div>
+	</div>
+</aside>
+<!-- //end aside.home-aside -->

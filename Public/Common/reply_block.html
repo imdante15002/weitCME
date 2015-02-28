@@ -1,0 +1,30 @@
+<div class="home-reply-box">
+	<div class="home-reply-user-img z">
+		<notempty name="guid">
+			<notempty name='u.avtimg'>
+				<img src="<!--{$u.avtimg}-->" alt="<!--{$u.username}-->" width="60">
+			<else/>
+				<span class="user-default-avtar"><i class="fa fa-user"></i></span>
+			</notempty>
+		<else/>
+			<span class="user-default-avtar"><i class="fa fa-user"></i></span>
+		</notempty>
+	</div>
+	<div class="home-reply-form-text">
+			<textarea name="body" id="Content" resize="0" <empty name="guid">disabled</empty> placeholder="<!--{$u.username}-->君君 ~给主人说两句吧！"></textarea>
+			<div class="home-rpley-extends">
+				<input type="submit" value="评论" class="btn btn-reg y">
+			</div>
+		<empty name="guid">
+				<div class="home-off-line-msk">
+					~您要先登录才能给主人留言⊙０⊙
+					<p>
+					<a href="javascript:;" class="login-btn modal" id="#login-modal"><i class="fa fa-user"></i> 登录</a>
+					如果您还没有账号，<a href="<!--{$g.siteurl}-->/member.php/register.html" class="text-primary"><i class="fa fa-user-plus"></i>请点此注册</a>一下吧！很快的哦！</p>
+				</div>
+		</empty>
+	</div>
+</div>
+<div class="home-reply-list">
+	
+</div>

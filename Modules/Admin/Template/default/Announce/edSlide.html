@@ -1,0 +1,28 @@
+<include file="Modules/Admin/Template/default/common/header.html"/>
+<section class="local-name">
+    <strong class="xs6 normal">编辑幻灯片信息</strong>
+</section>
+<section class="main">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form action="<!--{:U('OperateHandle/edSlide')}-->" method="post" enctype="multipart/form-data">
+                <table class="table">
+                    <tbody>
+                        <input type="hidden" name="id" value="<!--{$ed.id}-->">
+                        <input type="hidden" name="pic" value="<!--{$ed.pic}-->">
+                        <tr><td>标题</td><td><input type="text" name="title" value="<!--{$ed.title}-->" class="form-control w400"></td></tr>
+                        <tr><td>链接</td><td><input type="text" name="url" value="<!--{$ed.url}-->" class="form-control w400"></td></tr>
+                        <tr><td>图片</td><td><input type="file" name="pics"></td></tr>
+                        <tr><td>排序</td><td><input type="text" name="sort" value="<!--{$ed.sort}-->"class="form-control w80"></td></tr>
+                        <tr><td>&nbsp;</td><td><input type="submit" class="btn btn-success" value="保存修改"></td></tr>
+                        <tr>
+                            <td>截图预览</td>
+                            <td><img src="<!--{$g.siteurl}-->/<!--{$ed.pic}-->" width="800"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+<include file="Modules/Admin/Template/default/common/footer.html"/>

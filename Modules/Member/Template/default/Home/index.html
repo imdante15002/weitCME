@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><!--{$user.username}-->- 个人主页- <!--{$g.sitename}--></title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<include file="Public/Common/style.html" />
+	<css file="__mcss__/member.min.css"/>
+</head>
+<body>
+<div class="container">
+	<include file="Public/Home/header.html" />
+	<include file="Public/Member/header.html" />
+	<div class="wp cl">
+		<div class="home-main">
+			<section class="cl mt20 mb20">
+				<header class="home-main-header">
+					<h3 class="xs6 normal">个性签名 
+					<a href="/member.php/config/<!--{$u.uid}-->.html"><i class="fa fa-edit"></i></a>
+					</h3>
+				</header>
+				<article class="col article-text"><!--{$user.signature|default="这家伙很懒~没留下个性签名"}--></article>
+			</section>
+			<section class="cl mb20">
+				<header class="home-main-header"><h3 class="xs6 normal">最新帖子</h3></header>
+				<article class="col article-text">沉默是金，楼主选择做一个低调的人！</article>
+			</section>
+			<section class="cl mb20">
+				<header class="home-main-header"><h3 class="xs6 normal">留言板</h3></header>
+				<form action="/member.php/post/comment" method="post">
+					<include file="Public/Common/reply_block.html" />
+				</form>
+			</section>
+		</div>
+		<include file="Public/Member/aisde.html" />
+	</div>
+	<include file="Public/Home/footer.html" />
+	<js file="/Static/ueditor/ueditor.config.js"/>
+	<js file="/Static/ueditor/ueditor.all.min.js"/>
+	<js file="/Static/ueditor/ue_config_min.js"/>

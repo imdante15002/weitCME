@@ -1,0 +1,72 @@
+<include file="Modules/Admin/Template/default/common/header.html"/>
+<section class="main">
+    <div class="info-title">栏目<span class="on">列表</span></div>
+      <form action="<!--{:U('PortalHandle/upChannel')}-->" method="post">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th width="15"></th>
+                        <th>名称</th>
+                        <th width="60">id/pid</th>
+                        <th width="140">链接地址</th>
+                        <th width="80">模板</th>
+                        <th width="60">导航</th>
+                        <th width="240">操作</th>
+                        <th width="40">排序</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <volist name="channel" id="vo">
+                    <tr>
+                        <td><input type="checkbox" name="id[]" id="cid" value="<!--{$vo.id}-->"></td>
+                        <td><span class="ccc"><!--{$vo.html}--></span><!--{$vo.name}--></td>
+                        <td><!--{$vo.id}-->/<!--{$vo.pid}--></td>
+                        <td><!--{$vo.url}--></td>
+                        <td><!--{$vo.tpl|default="默认"}--></td>
+                        <td><if condition="$vo.nav eq 1">是<else/>否</if></td>
+                        <td>
+                            <if condition="$vo['type'] eq 2">
+                             <a href="javascript:;" data-pid="<!--{$vo.id}-->" class="t_a">+子栏目</a>
+                            </if>
+                            <a href="<!--{:U('Content/ed_channel',array(id=>$vo['id']))}-->"  class="t_a">编辑</a>
+                            <a href="javascript:;"  class="t_a modal" data-id="<!--{$vo.id}-->" data-target="#delModal" id="delChannel">删除</a>
+                        </td>
+                        <td><input type="text" name="<!--{$vo.id}-->" class="w40" value="<!--{$vo.sort}-->"></td>
+                    </tr>
+                    </volist>
+                    <tr>
+                    	<td></td>
+                    	<td colspan="7"><a href="<!--{:U('Portal/add_channel')}-->" class="f60"><b>+</b> 添加栏目</a></td>
+                    </tr>
+                    <tr>
+                    	<td><input type="checkbox" id="checkbox_all"></td>
+                    	<td colspan="7">
+                    		<input type="submit" value="更新排序">
+                    	</td>
+                    </tr>
+                </tbody>
+            </table>
+    	</form>
+   	</div>
+</section>
+<div class="dialog" id="delModal">
+	<div class="dialog-content">
+		<div class="dialog-header"><span class="cls clsModal"></span>删除确认</div>
+		<div class="dialog-body">
+			<p class="f60">改操作不可逆，请谨慎操作！</p>
+		</div>
+		<div class="dialog-footer">
+			<a href="javascript:;" class="dialog-abtn mr10 sentData">确认删除</a>
+			<a href="javascript:;" class="dialog-abtn clsModal">取消</a>
+		</div>
+	</div>
+</div>
+<include file="Modules/Admin/Template/default/common/footer.html"/>
+<script type="text/javascript">
+    $(function(){
+        $("#delChannel").click(function(){
+            var id=$(this).data('id');
+            $('.sentData').attr("href","/admin.php/ContentHandle/delChannel/id/"+id+".html");
+        });
+    })
+</script>

@@ -1,0 +1,100 @@
+<include file="Modules/Admin/Template/default/common/header.html"/>
+<section class="local-name">
+    <strong class="xs6 normal">友情链接</strong><small> 添加修改友情链接信息</small>
+</section>
+<section class="main">
+    <div class="panel panel-default">
+    <form action="<!--{:U('OperateHandle/upSortFlink')}-->" method="post">
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th width="15"><input type="checkbox" id="checkbox_all"></th>
+                        <th>链接标题</th>
+                        <th width="200">链接地址</th>
+                        <th width="120">操作</th>
+                        <th width="50">排序</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <volist name="list" id="vo">
+                    <tr>
+                        <td><input type="checkbox" name="id[]" value="<!--{$vo.id}-->"></td>
+                        <td><!--{$vo.linkname}--></td>
+                        <td><!--{$vo.linkurl}--></td>
+                        <td>
+                           <a href="<!--{:U('Operate/edFlink',array('id'=>$vo['id']))}-->" class="btn btn-primary tlps" title="编辑" data-placement="bottom"><span class="glyphicon glyphicon-edit"></span></a>
+                            <a href="javascript:;" class="btn btn-danger tlps del" data-id="<!--{$vo.id}-->" title="删除" data-placement="bottom" data-toggle="modal" data-target=".delFlink"><span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                        <td><input type="text" name="<!--{$vo.id}-->" class="form-control form-sort" value="<!--{$vo.sort}-->"></td>
+                    </tr>
+                    </volist>
+                </tbody>
+            </table>
+        </div>
+        <div class="panel-footer">
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target=".addFlink"><span class="glyphicon glyphicon-plus"></span>添加友情链接</button>
+            <input type="submit" class="btn btn-default" value="更新排序">
+        </div>
+        </form>
+    </div>
+</div>
+<!-- 添加用户 -->
+<div class="modal fade addFlink">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">添加新用户组</h4>
+      </div>
+      <div class="modal-body">
+           <form action="<!--{:U('OperateHandle/addFlink')}-->" method="post">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td width="60">名称</td>
+                        <td><input type="text" name="linkname" class="form-control w360"></td>
+                    </tr>
+                    <tr>
+                        <td>链接</td>
+                        <td><input type="text" name="linkurl" class="form-control w360"></td>
+                    </tr>
+                    <tr>
+                        <td>排序</td>
+                        <td><input type="text" name="sort" class="form-control w80"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><input type="submit" class="btn btn-success" value="确认添加"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+      </div>
+      </div>
+    </div>
+</div>
+<!-- 删除确认提示框 -->
+<div class="modal fade delFlink" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="panel-body">
+            您将删除ID为<span class="del_id"></span>的友情链接
+        </div>
+        <div class="panel-footer">
+            <a href="" class="btn btn-success confirm-del">确认删除</a>
+            <a href="javascript:;" class="btn btn-default" data-dismiss="modal">取消</a>
+        </div>
+    </div>
+  </div>
+</div>
+<include file="Modules/Admin/Template/default/common/footer.html"/>
+<script type="text/javascript">
+    $(function(){
+        $(".del").click(function(){
+            var id=$(this).data('id');
+            $('.del_id').html(id);
+            $('.confirm-del').attr("href","/Admin/OperateHandle/delFlink/id/"+id+".html");
+        });
+    })
+</script>

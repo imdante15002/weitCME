@@ -1,0 +1,51 @@
+<include file="Modules/Admin/Template/default/common/header.html"/>
+<section class="local-name">
+    <strong class="xs6 normal">发布文章</strong><small></small>
+</section>
+<section class="main">
+    <div class="panel panel-default">
+          <div class="panel-body">
+            <form action="" method="get">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th width="15"><input type="checkbox" id="checkbox_all"></th>
+                        <th>标题</th>
+                        <th width="120">栏目</th>
+                        <th width="60">作者</th>
+                        <th width="80">发布时间</th>
+                        <th width="80">浏览</th>
+                        <th width="80">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <volist name="list" id="vo">
+                    <tr>
+                        <td><input type="checkbox" name="id[]" value="<!--{$vo.id}-->"></td>
+                        <td><!--{$vo.title}--></td>
+                        <td><!--{$vo.name|default="未知"}--></td>
+                        <td><!--{$vo.username|default="未知"}--></td>
+                        <td><!--{$vo.dateline|date="Y/m/d",###}--></td>
+                        <td><!--{$vo.views|default="未知"}--></td>
+                        <td>
+                            <a href="<!--{:U('Content/ed_article',array(id=>$vo['id']))}-->" class="tlps btn btn-primary" data-placement="bottom" title="编辑"><i class="glyphicon glyphicon-edit"></i></a>
+                            <a href="#" class="tlps btn btn-danger"  data-placement="bottom" title="删除文章" data-toggle="modal" data-target=".delChannel"><i class="glyphicon glyphicon-remove-sign"></i></a>
+                        </td>
+                    </tr>
+                    </volist>
+                    <tr>
+                        <td colspan="2">
+                             <a>批量移动</a>
+                             <a>批量删除</a>
+                        </td>
+                        <td colspan="5">
+                            <div class="page"><!--{$page}--></div>
+                        </td>
+                    </tr>
+                </body>
+            </table>
+            </form>
+        </div>
+    </div>
+</div>
+ <include file="Modules/Admin/Template/default/common/footer.html"/>

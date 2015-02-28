@@ -1,0 +1,103 @@
+<include file="Modules/Admin/Template/default/common/header.html"/>
+<section class="main">
+    <div class="panel">
+    <div class="panel-header"><i class="fa fa-navicon"></i> 站点导航</div>
+    <div class="panel-body">
+        <form action="<!--{:U('ConfigHandle/upNavgation')}-->" method="post">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th width="40"><input type="checkbox"></th>
+                    <th width="80">显示顺序</th>
+                    <th>名称</th>
+                    <th width="240">链接</th>
+                    <th width="60">可用</th>
+                    <th width="200">编辑</th>
+                </tr>
+            </thead>
+            <tbody>
+                <volist name="navigation" id="vo">
+                <tr>
+                    <td><input type="checkbox" name="id[]" value="<!--{$vo.id}-->"></td>
+                    <td><input type="text" name="<!--{$vo.id}-->" value="<!--{$vo.sort}-->" class="form-sort w40"></td>
+                    <td>
+                        <empty name="vo.html">
+                            <!--{$vo.name}--> <a href="javascript:;" class="ml10 xs2 modal text-waring addSnv" data-pid="<!--{$vo.id}-->" data-target="#addNavigation"><i class="fa fa-plus"></i> 添加二级导航</a>
+                        <else />
+                            <span class="ml20"><!--{$vo.html}--><!--{$vo.name}--></span>
+                        </empty>
+                    </td>
+                    <td><!--{$vo.url}--></td>
+                    <td><if condition="$vo['nav'] eq 1"><i class="fa fa-check text-success"></i><else/><i class="fa fa-close text-danger"></i></if></td>
+                    <td>
+                        <a href="<!--{:U('Config/edNavigation',array(id=>$vo['id']))}-->" class="t_a"><i class="fa fa-edit"></i> 编辑</a>
+                        <a href="javascript:;" class="t_a modal delNav" data-id="<!--{$vo.id}-->" data-target="#delNav"><i class="fa fa-trash"></i> 删除</a>
+                    </td>
+                </tr>
+                </volist>
+                <tr class="t-tr">
+                    <td colspan="6">
+                        <a href="javascript:;" class="btn btn-primary modal" data-target="#addNavigation"><i class="fa fa-plus"></i> 添加导航</a>
+                        <input type="submit" value="更新" class="btn btn-success">
+                        <input type="submit" value="删除" class="btn btn-danger" onclick="form.action='/admin.php/ForumHandle/delAllForum.html';form.submit();">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </form>
+    </div>
+    </div>
+</section>
+<div class="dialog" id="addNavigation">
+    <div class="dialog-content">
+        <div class="dialog-header"><span class="cls clsModal"><i class="fa fa-close"></i></span>添加导航</div>
+        <form action="<!--{:U('ConfigHandle/addNavgation')}-->" method="post">
+        <input type="hidden" name="pid" class="pid" value="">
+            <div class="dialog-body">
+                    <table class="table">
+                        <tbody>
+                            <tr><td width="60">名称</td><td><input type="text" name="name" class=" w200" value=""></td></tr>
+                            <tr><td width="60">导航链接</td><td><input type="text" name="url" class=" w200" value=""></td></tr>
+                            <tr><td>导航显示</td>
+                                <td  class="buttons-radio">
+                                  <label><input type="radio" name="nav" value="1">显示</label>
+                                  <label><input type="radio" name="nav" value="0" checked>不显示</label>
+                                </td>
+                            </tr>
+                            <tr><td>排序</td><td><input type="text" name="sort" class="w80" value=""></td></tr>
+                        </tbody>
+                    </table>
+            </div>
+            <div class="dialog-footer">
+                <input type="submit" class="btn btn-primary" value="确认添加">
+                <span class="btn btn-default clsModal">取消</span>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- //删除导航 -->
+<div class="dialog" id="delNav">
+    <div class="dialog-content">
+        <div class="dialog-header"><span class="cls clsModal"><i class="fa fa-close"></i></span>删除确认</div>
+        <div class="dialog-body">
+            <p class="f60">改操作不可逆，请谨慎操作！</p>
+        </div>
+        <div class="dialog-footer">
+            <a href="javascript:;" class="btn btn-primary mr10 sentData">确认删除</a>
+            <a href="javascript:;" class="btn btn-default clsModal">取消</a>
+        </div>
+    </div>
+</div>
+<include file="Modules/Admin/Template/default/common/footer.html"/>
+<script type="text/javascript">
+    $(function(){
+        $(".delNav").click(function(){
+            var id=$(this).data('id');
+            $('.sentData').attr("href","/admin.php/ConfigHandle/delNavigation/id/"+id+".html");
+        });
+        $(".addSnv").click(function(){
+            var pid=$(this).data('pid');
+            $(".pid").attr('value',+pid);
+        })
+    })
+</script>

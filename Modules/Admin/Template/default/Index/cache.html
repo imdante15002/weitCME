@@ -1,0 +1,24 @@
+<include file="Modules/Admin/Template/default/common/header.html"/>
+<section class="local-name">
+  <strong class="xs6 normal">清空缓存</strong>
+</section>
+<section class="main">
+    <div class="panel panel-default">
+      <div class="panel-heading"><span class="glyphicon glyphicon-dashboard"></span> 清空缓存确认</div>
+      <div class="panel-body">
+       <form action="<!--{:U('IndexHandle/cacheHandle')}-->" method="post">
+         <div class="text-center"><label class="checkbox-inline">
+           <p>
+             <input type="checkbox" value="1" name="cache" checked="checked">缓存文件</label>
+             <label class="checkbox-inline"><input type="checkbox" value="1" name="data" checked="checked">数据缓存</label>
+             <label class="checkbox-inline"><input type="checkbox" value="1" name="logs" checked="checked">日志记录</label>
+             <label class="checkbox-inline"><input type="checkbox" value="1" name="temp" checked="checked">临时文件</label>
+             <label class="checkbox-inline"><input type="checkbox" value="1" name="temp" checked="checked">静态html缓存</label>
+           </p>
+         </div>
+         <div class="text-center"><input type="submit" value="确认清理" class="btn btn-primary"></div>
+       </form>
+      </div>
+  </div>
+</section><!--//End main -->
+<include file="Modules/Admin/Template/default/common/footer.html"/>

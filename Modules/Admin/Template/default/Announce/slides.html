@@ -1,0 +1,94 @@
+<include file="Modules/Admin/Template/default/common/header.html"/>
+<section class="local-name">
+    <strong class="xs6 normal">幻灯片</strong>
+</section>
+<section class="main">
+    <div class="panel panel-default">
+    <form action="<!--{:U('OperateHandle/upSortSlide')}-->" method="post">
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th width="15">Id</th>
+                        <th>幻灯片标题</th>
+                        <th width="160">链接地址</th>
+                        <th width="400">图片地址</th>
+                        <th width="120">发布时间</th>
+                        <th width="120">操作</th>
+                        <th width="50">排序</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <volist name="slides" id="vo">
+                    <tr>
+                        <td><!--{$vo.id}--></td>
+                        <td title="<!--{$vo.title}-->"><!--{$vo.title}--></td>
+                        <td title="<!--{$vo.url|default="#"}-->"><!--{$vo.url|default="#"}--></td>
+                        <td title="<!--{$vo.pic|default="#"}-->"><!--{$vo.pic|default="#"}--></td>
+                        <td><!--{$vo.dateline|date="Y-m-d",###}--></td>
+                        <td>
+                            <a href="<!--{:U('Operate/edSlide',array('id'=>$vo['id']))}-->" class="btn btn-primary tlps" title="编辑" data-placement="bottom"><span class="glyphicon glyphicon-edit"></span></a>
+                            <a href="javascript:;" class="btn btn-danger tlps del" data-id="<!--{$vo.id}-->" title="删除" data-placement="bottom" data-toggle="modal" data-target=".delSlide"><span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control form-sort" name="<!--{$vo.id}-->" value="<!--{$vo.sort}-->"/>
+                        </td>
+                    </tr>
+                    </volist>
+                </tbody>
+            </table>
+        </div>
+        <div class="panel-footer">
+             <button type="button" class="btn btn-success" data-toggle="modal" data-target=".addSlide"><span class="glyphicon glyphicon-plus"></span>添加幻灯片</button>
+             <input type="submit" class="btn btn-default" value="更新排序">
+        </div>
+    </form>
+</div>
+<!-- 添加新幻灯片 -->
+<div class="modal fade addSlide">
+    <div class="modal-dialog">
+        <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">添加新幻灯片</h4>
+              </div>
+              <div class="modal-body">
+                   <form action="<!--{:U('OperateHandle/addSlide')}-->" method="post" enctype="multipart/form-data">
+                        <table class="table">
+                            <tbody>
+                               <tr><td>标题</td><td><input type="text" name="title" class="form-control w400"></td></tr>
+                                <tr><td>链接</td><td><input type="text" name="url" class="form-control w400"></td></tr>
+                                <tr><td>图片</td><td><input type="file" name="pics"></td></tr>
+                                <tr><td>排序</td><td><input type="text" name="sort" class="form-control w80"></td></tr>
+                                <tr><td>&nbsp;</td><td><input type="submit" class="btn btn-success" value="确认"></td></tr> 
+                            </tbody>
+                        </table>
+                    </form>
+              </div>
+        </div>
+    </div>
+</div>
+<!-- 删除确认提示框 -->
+<div class="modal fade delSlide" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="panel-body">
+            您将删除ID为<span class="del_id"></span>的幻灯片
+        </div>
+        <div class="panel-footer">
+            <a href="" class="btn btn-success confirm-del">确认删除</a>
+            <a href="javascript:;" class="btn btn-default" data-dismiss="modal">取消</a>
+        </div>
+    </div>
+  </div>
+</div>
+<include file="Modules/Admin/Template/default/common/footer.html"/>
+<script type="text/javascript">
+    $(function(){
+        $(".del").click(function(){
+            var id=$(this).data('id');
+            $('.del_id').html(id);
+            $('.confirm-del').attr("href","/Admin/OperateHandle/delSlide/id/"+id+".html");
+        });
+    })
+</script>

@@ -1,0 +1,191 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?php echo ($g["shortname"]); ?> - 后台管理中心-Powered by Weicme!</title>
+    <link rel="Shortcut Icon" type="image/x-icon" href="/Static/admin/images/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="/Static/admin/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Static/admin/css/base.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Static/admin/css/extend_common.css" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/Static/common/js/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--[if IE 8]>
+    <div class="low-ie-bar">温馨提示：您现在使用的浏览器版本过低，可能会导致网页部分内容无法正常显示。请立即 <a href="http://www.microsoft.com/china/windows/IE/upgrade/index.aspx" target="_blank">免费升级</a> 或下载使用 <a href="https://www.google.com/intl/zh-CN/chrome/browser/" target="_blank">谷歌浏览器</a>。
+    </div>
+<![endif]-->
+<header class="header">
+    <h2 class="logo z"><a href="<?php echo U('Index/index');?>" title="返回管理首页">
+        <!-- <img src="/Static/admin/images/acp_logo.png" alt="DantesCMS Enterprise 内容管理系统" width="160" height="48"></a> -->
+        <i class="fa fa-leaf"></i> WEICMS<span class="xs2">管理系统</span>
+    </h2>
+    <nav class="nav z">
+        <ul>
+          <li><a href="<?php echo U('Index/index');?>" <?php if(CONTROLLER_NAME == 'Index'): ?>class="active"<?php endif; ?>><i class="fa fa-home"></i> 首页</a></li>
+          <li><a href="<?php echo U('Config/index');?>" <?php if(CONTROLLER_NAME == 'Config'): ?>class="active"<?php endif; ?>><i class="fa fa-cog"></i> 全局</a></li>             
+          <li><a href="<?php echo U('Member/index');?>" <?php if(CONTROLLER_NAME == 'Member'): ?>class="active"<?php endif; ?>><i class="fa fa-users"></i> 用户</a></li>
+          <li><a href="<?php echo U('Portal/index');?>" <?php if(CONTROLLER_NAME == 'Portal'): ?>class="active"<?php endif; ?>><i class="fa fa-dashboard"></i> 内容</a></li>
+          <li><a href="<?php echo U('Announce/index');?>" <?php if(CONTROLLER_NAME == 'Announce'): ?>class="active"<?php endif; ?>><i class="fa fa-puzzle-piece"></i> 运营</a></li>
+          <li><a href="<?php echo U('Tools/index');?>" <?php if(CONTROLLER_NAME == 'Tools'): ?>class="active"<?php endif; ?>><i class="fa fa-wrench"></i> 站长</a></li>
+        </ul>
+    </nav>
+    <div class="uinfo">
+        <ul>
+    	   <li><a href="javascript:;"><i class="fa fa-user"></i> <?php echo (session('username')); ?></a></li>
+           <li><a href="javascript:;"><i class="fa fa-bell"></i> 通知</a></li>
+           <li><a href="<?php echo ($g["siteurl"]); ?>" target="_blank"><i class="fa fa-desktop"></i> 站点首页</a></li>
+           <li><a href="/admin.php/Public/logout.html" class="xg4"><i class="fa fa-power-off"></i> 注销</a></li>
+        </ul>
+    </div>
+</header>
+<div class="container cl">
+<aside class="aside cl">
+	<ul class="nav-pills">
+		<?php if(CONTROLLER_NAME == 'Index'): ?><li <?php if(ACTION_NAME == 'index'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('Index/index');?>"><i class="fa fa-home"></i> 管理首页</a></li>
+        <li <?php if(ACTION_NAME == 'add_article'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Portal/add_article');?>"><i class="fa fa-plus"></i> 文章发布</a></li>
+		<li <?php if(ACTION_NAME == 'custommenu'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Index/custommenu');?>"><i class="fa fa-keyboard-o"></i> 常用菜单管理</a></li>
+   
+        <?php elseif(CONTROLLER_NAME == 'Member'): ?>
+        <li <?php if((ACTION_NAME == 'index') or (ACTION_NAME == 'edUser')): ?>class="active"<?php endif; ?>><a href="<?php echo U('Member/index');?>"><i class="fa fa-users"></i> 用户管理</a></li> 
+        <li <?php if(ACTION_NAME == 'adduser'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Member/adduser');?>"><i class="fa fa-user-plus"></i> 添加用户</a></li> 
+        <li <?php if(ACTION_NAME == 'msg'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Member/msg');?>"><i class="fa fa-send"></i> 发送通知</a></li> 
+        <li <?php if(ACTION_NAME == 'userBan'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Member/userBan');?>"><i class="fa fa-warning"></i> 禁止用户</a></li> 
+        <li <?php if(ACTION_NAME == 'reward'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Member/reward');?>"><i class="fa fa-database"></i> 积分奖惩</a></li> 
+        <li <?php if(ACTION_NAME == 'members'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Member/members');?>"><i class="fa fa-crosshairs"></i> 审核用户</a></li> 
+        <li <?php if(ACTION_NAME == 'usergroup'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Member/usergroup');?>"><i class="fa fa-user-secret"></i> 用户组</a></li> 
+        <li <?php if(ACTION_NAME == 'verify'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Member/verify');?>"><i class="fa fa-user"></i> 认证设置</a></li> 
+    		
+        <?php elseif(CONTROLLER_NAME == 'Portal'): ?>
+        <li <?php if(ACTION_NAME == 'add_article'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Portal/add_article');?>"><i class="fa fa-plus"></i> 内容发布</a></li>
+		<li <?php if(ACTION_NAME == 'index'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Portal/index');?>"><i class="fa fa-file-word-o"></i> 内容管理</a></li>
+		<li <?php if(ACTION_NAME == 'topic'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Portal/topic');?>"><i class="fa fa-tint"></i> 专题管理</a></li>
+        <li <?php if(ACTION_NAME == 'page'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Portal/page');?>"><i class="fa fa-file-powerpoint-o"></i> 页面管理</a></li>
+        <li <?php if(ACTION_NAME == 'slides'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Portal/slides');?>"><i class="fa fa-photo"></i> 门户幻灯片</a></li>
+		<li <?php if(ACTION_NAME == 'recommend'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Portal/recommend');?>"><i class="fa fa-anchor"></i> 首页推荐</a></li>
+    	
+        <?php elseif(CONTROLLER_NAME == 'Announce'): ?>
+        <li <?php if(ACTION_NAME == 'index'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Announce/index');?>"><i class="fa fa-bell"></i> 站点公告</a></li>
+		<li <?php if(ACTION_NAME == 'adv'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Announce/adv');?>"><i class="fa fa-puzzle-piece"></i> 站点广告</a></li>
+		<li <?php if(ACTION_NAME == 'magics'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Announce/magics');?>"><i class="fa fa-paypal"></i> 道具商城</a></li>
+		<li <?php if(ACTION_NAME == 'flink'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Announce/flink');?>"><i class="fa fa-link"></i> 友情链接</a></li>
+		<li <?php if(ACTION_NAME == 'relatedlink'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Announce/relatedlink');?>"><i class="fa fa-unlink"></i> 关联链接</a></li>
+		
+        <?php elseif(CONTROLLER_NAME == 'Tools'): ?>
+        <li <?php if(ACTION_NAME == 'index'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Tools/index');?>"><i class="fa fa-refresh"></i> 更新缓存</a></li>
+        <li <?php if(ACTION_NAME == 'team'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Tools/team');?>"><i class="fa fa-users"></i> 管理团队</a></li>
+        <li <?php if(ACTION_NAME == 'models'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Tools/models');?>"><i class="fa fa-th-large"></i> 模型列表</a></li>
+        <li <?php if(ACTION_NAME == 'mail'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Tools/mail');?>"><i class="fa fa-envelope"></i> 邮件设置</a></li>
+        <li <?php if(ACTION_NAME == 'counts'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Tools/counts');?>"><i class="fa fa-coffee"></i> 访问统计</a></li>
+        <li <?php if(ACTION_NAME == 'safe'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Tools/safe');?>"><i class="fa fa-circle"></i> 安全中心</a></li>
+        <li <?php if(ACTION_NAME == 'database'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Tools/database');?>"><i class="fa fa-database"></i> 数据库</a></li>
+        <li <?php if(ACTION_NAME == 'update'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Tools/uodate');?>"><i class="fa fa-upload"></i> 在线升级</a></li>
+
+        <?php elseif(CONTROLLER_NAME == 'Config'): ?>
+        <li <?php if(ACTION_NAME == 'index'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Config/index');?>"><i class="fa fa-info-circle"></i> 站点信息</a></li>
+        <li <?php if(ACTION_NAME == 'navs'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Config/navs');?>"><i class="fa fa-navicon"></i> 站点导航</a></li>
+        <li <?php if(ACTION_NAME == 'censor'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Config/censor');?>"><i class="fa fa-font"></i> 词语过滤</a></li> 
+        <li <?php if(ACTION_NAME == 'tags'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Config/tags');?>"><i class="fa fa-tags"></i> 标签管理</a></li> 
+        <li <?php if(ACTION_NAME == 'cache'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Config/cache');?>"><i class="fa fa-ticket"></i> 性能优化</a></li>
+        <li <?php if(ACTION_NAME == 'extend'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Config/extend');?>"><i class="fa fa-pie-chart"></i> 积分设置</a></li>
+        <li <?php if(ACTION_NAME == 'upload'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Config/upload');?>"><i class="fa fa-upload"></i> 上传设置</a></li>
+        <li <?php if(ACTION_NAME == 'water'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Config/water');?>"><i class="fa fa-photo"></i> 水印设置</a></li>
+		<li <?php if(ACTION_NAME == 'mobile'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Config/mobile');?>"><i class="fa fa-mobile"></i> 手机版设置</a></li>
+		<?php else: ?>
+            <li <?php if(ACTION_NAME == 'index'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('Index/index');?>">管理首页</a></li>
+            <li <?php if(ACTION_NAME == 'add_article'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Portal/add_article');?>">文章发布</a></li>
+            <li <?php if(ACTION_NAME == 'ui'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Index/ui');?>">框架UI</a></li>
+            <li <?php if(ACTION_NAME == 'custommenu'): ?>class="active"<?php endif; ?>><a href="<?php echo U('Index/custommenu');?>">常用菜单管理</a></li><?php endif; ?>
+	</ul>
+</aside>
+<section class="main">
+    <div class="panel" style="overflow:auto">
+        <div class="panel-header"><i class="fa fa-anchor"></i> 首页推荐</div>
+        <div class="panel-body">
+          <form action="<?php echo U('PortalHandle/upSortRecommend');?>" method="post">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th width="15"><input type="checkbox" id="checkbox_all"></th>
+                            <th>标题</th>
+                            <th width="360">链接</th>
+                            <th width="120">有效期</th>
+                            <th width="120">操作</th>
+                            <th width="40">排序</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if(is_array($recommend)): $i = 0; $__LIST__ = $recommend;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+                            <td><input type="checkbox" name="id[]" value="<?php echo ($vo["id"]); ?>"></td>
+                            <td><?php echo ($vo["title"]); ?></td>
+                            <td><?php echo ($vo["url"]); ?></td>
+                            <td><?php echo ($vo["timeout"]); ?></td>
+                            <td>
+                                <a href="<?php echo U('Portal/edRecommend',array(id=>$vo['id']));?>" class="t_a"><i class="fa fa-edit"></i> 编辑</a>
+                                <a href="javascript:;" class="t_a modal" data-id="<?php echo ($vo["id"]); ?>" data-target="#delModal"><i class="fa fa-trash"></i> 删除</a>
+                            </td>
+                            <td><input type="text" name="<?php echo ($vo["id"]); ?>" value="<?php echo ($vo["sort"]); ?>" class="form-sort w40"></td>
+                        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                        <tr class="t-tr">
+                            <td colspan="6">
+                                <a href="javascript:;" class="btn btn-primary mr5 modal" data-target="#addSlide"><i class="fa fa-plus"></i> 添加推荐</a>
+                                <input type="submit" value="更新" class="btn btn-success mr5">
+                                <a href="javascript:;" class="btn btn-danger">删除</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        	</form>
+       	</div>
+    </div>
+</section>
+<div class="dialog" id="delModal">
+	<div class="dialog-content">
+		<div class="dialog-header"><span class="cls clsModal"><i class="fa fa-close"></i></span>删除确认</div>
+		<div class="dialog-body">
+			<p class="f60">改操作不可逆，请谨慎操作！</p>
+		</div>
+		<div class="dialog-footer">
+			<a href="javascript:;" class="dialog-abtn mr10 sentData">确认删除</a>
+			<a href="javascript:;" class="dialog-abtn clsModal">取消</a>
+		</div>
+	</div>
+</div>
+<div class="dialog" id="addSlide">
+    <div class="dialog-content">
+        <div class="dialog-header"><span class="cls clsModal"><i class="fa fa-close"></i></span>添加首页推荐</div>
+        <form action="<?php echo U('PortalHandle/addRecommend');?>"  method="post" enctype="multipart/form-data">
+        <div class="dialog-body">
+            <table class="table">
+                <tbody>
+                    <tr><td width="40">标题</td><td><input type="text" name="title" value="" class="w220"></td></tr>
+                    <tr><td>链接</td><td><input type="text" name="url" value="" class="w220"></td></tr>
+                    <tr><td>图片</td><td><input type="file" name="pics"></td></tr>
+                    <tr><td>期效</td><td><input type="text" name="timeout" class="w80" value="93600"><span class="ml10 xs2">一天：60*60*24=93600s</span></td></tr>
+                    <tr><td>排序</td><td><input type="text" name="sort" value="0"class="form-control w80"></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="dialog-footer">
+            <input type="submit" value="添加" class="btn btn-primary">
+            <a href="javascript:;" class="btn btn-defalut clsModal">取消</a>
+        </div>
+        </form>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="/Static/common/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/Static/admin/js/jquery.weicme.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    $(function(){
+        $(".modal").click(function(){
+            var id=$(this).data('id');
+            $('.sentData').attr("href","/admin.php/PortalHandle/delRecommend/id/"+id+".html");
+        });
+    })
+</script>

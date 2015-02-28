@@ -1,0 +1,120 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>特别推荐 - <?php echo ($g["sitename"]); ?></title>
+		<link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="/Static/admin/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="/Static/common/css/common.min.css" />
+	<link rel="stylesheet" type="text/css" href="/Static/home/css/home.min.css" />
+	<!--[if lt ie 9]> 
+	<script src="/Static/common/js/html5.js"></script> 
+	<![endif]--> 
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+</head>
+<body>
+<div class="container">
+	<header class="header cl">
+	<section class="wp cl">
+		<h2 class="logo"><a href="<?php echo ($g["siteurl"]); ?>"><img src="/Static/home/images/logo.jpg" alt="<?php echo ($g["sitename"]); ?>,<?php echo ($g["keywords"]); ?>"></a></h2>
+		<nav class="nav z cl">
+			<ul>
+				<li><a href="<?php echo ($g["siteurl"]); ?>"><i class="fa fa-home"></i> 首页</a></li>
+				<?php if(is_array($channel)): $i = 0; $__LIST__ = $channel;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['nav'] == 1): ?><li><a href="<?php echo ($g["siteurl"]); ?>/<?php echo ($vo["url"]); ?>/"><?php echo ($vo["name"]); ?></a></li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+				<li>
+					<a class="nav-more"><i class="fa fa-th"></i></a>
+					<ul class="all_nav">
+					<?php if(is_array($channel)): $i = 0; $__LIST__ = $channel;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['nav'] != 1): ?><li><a href="<?php echo ($g["siteurl"]); ?>/<?php echo ($vo["url"]); ?>/"><?php echo ($vo["name"]); ?></a></li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+					</ul>
+				</li>
+				
+				<li><a class="nav-search"><i class="fa fa-search"></i></a></li>
+			</ul>
+		</nav>
+		<!-- block for user state -->
+<div class="user-block y">
+	<?php if(!empty($guid)): ?><div class="on-line">
+		<ul>
+			<li><a href="<?php echo ($g["siteurl"]); ?>/member.php/post.html"><i class="fa fa-plus xs20"></i></a></li>
+			<li class="user-avtar">
+				<a href="<?php echo ($g["siteurl"]); ?>/member.php/home/<?php echo ($u["uid"]); ?>.html">
+				<?php if(!empty($u["avtimg"])): ?><img src="<?php echo ($u["avtimg"]); ?>" alt="<?php echo ($u["username"]); ?>">
+				<?php else: ?>
+					<span class="user-default-avtar"><i class="fa fa-user"></i></span><?php endif; ?>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;" class="user-block-dropdown"><?php echo ($u["username"]); ?> <i class="fa fa-chevron-down"></i></a>
+				<ul class="user-block-menu">
+					<li><a href="<?php echo ($g["siteurl"]); ?>/member.php/home/<?php echo ($u["uid"]); ?>.html"><i class="fa fa-home"></i> 主页</a></li>
+					<li><a href="<?php echo ($g["siteurl"]); ?>/member.php/config/<?php echo ($u["uid"]); ?>.html"><i class="fa fa-cog"></i> 设置</a></li>
+					<li><a href="<?php echo ($g["siteurl"]); ?>/member.php/thread/<?php echo ($u["uid"]); ?>.html"><i class="fa fa-comment-o"></i> 帖子</a></li>
+					<li><a href="<?php echo ($g["siteurl"]); ?>/member.php/reply/<?php echo ($u["uid"]); ?>.html"><i class="fa fa-comments-o"></i> 回复</a></li>
+					<li><a href="<?php echo ($g["siteurl"]); ?>/member.php/record/<?php echo ($u["uid"]); ?>.html"><i class="fa fa-star-o"></i> 收藏</a></li>
+					<li class="bdnone"><a href="<?php echo ($g["siteurl"]); ?>/member.php/public/logout.html"><i class="fa fa-power-off"></i> 退出</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<?php else: ?>
+	<div class="off-line">
+		<a href="javascript:;" class="login-btn modal" id="#login-modal"><i class="fa fa-user"></i> 登录</a>
+		<a href="<?php echo ($g["siteurl"]); ?>/member.php/register.html" class="reg-btn">注册</a>
+	</div><?php endif; ?>
+</div>
+<!-- //end user block -->
+	</section>
+</header>
+<?php if(MODULE_NAME != 'Member'): ?><div class="tw cl"></div><?php endif; ?>
+	<div class="wp cl">
+	</div>
+	<footer class="footer">
+	<div class="wp cl">
+		<div class="static hm xs2">
+			<a href="<?php echo ($g["siteurl"]); ?>/about.html" class="first">关于我们</a>
+			<a href="<?php echo ($g["siteurl"]); ?>/flow.html">免责申明</a>
+			<a href="<?php echo ($g["siteurl"]); ?>/adv.html">广告服务</a>
+			<a href="<?php echo ($g["siteurl"]); ?>/flink.html">友情链接</a>
+			<a href="<?php echo ($g["siteurl"]); ?>/sitemap.html">网站导航</a>
+			<a href="<?php echo ($g["siteurl"]); ?>/join.html">加入我们</a>
+		</div>
+		<div class="copy hm">	
+			<p>免责声明：本站所有内容均来自正规视频站点所提供的公开引用资源</p>
+			<p>&copy;COPYRIGHT 2014 <a href="<?php echo ($g["siteurl"]); ?>">wei2.wang</a> ALL RIGHTS RESERVED.<a href="http://www.miibeian.gov.cn/" target="_blank"><?php echo ($g["icp"]); ?></a></p>
+		</div>
+		<div class="copyright"></div>
+	</div>
+</footer>
+<?php if(empty($guid)): ?><div class="dialog-msk" id="#login-modal"></div>
+<div class="dialog" id="login-modal">
+	<div class="dialog-header">
+		<span class="y cls" id="#login-modal"><i class="fa fa-close"></i></span>
+		用户登录
+	</div>
+	<div class="dialog-body">
+		<form action="/member.php/logindo.html" method="post">
+			<div class="form-group"><i class="fa fa-envelope"></i><input type="text" name="email" class="form-control w200 form-control-lg" placeholder="输入您的注册邮箱"></div>
+			<div class="form-group"><i class="fa fa-file-powerpoint-o"></i><input type="password" name="password" class="form-control w200 form-control-lg" placeholder="密码"></div>
+			<div class="form-group"><input type="submit" value="立即登录" class="btn btn-primary mr10 btn-lg"><a href="" class="btn btn-reg">注册</a></div>
+			<div class="form-group">忘记密码?</div>
+		</form>
+	</div>
+</div><?php endif; ?>
+</div><!-- //end container -->
+<script type="text/javascript" src="/Static/common/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/Static/common/js/jquery.lazyFade.js"></script>
+<script type="text/javascript" src="/Static/home/js/extend_common.min.js"></script>
+<script type="text/javascript">
+	//$('.container div,.container section').lazyFade({reverse: false,duration: 250,delay: 100,opacity: {start: 0.01,end: 1}});
+</script>
+<?php if(CONTROLLER_NAME == 'Index'): ?><script type="text/javascript" src="/Static/common/js/jquery.slide.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".slide,.forum-slide").slide({
+		affect:4,
+		time:4000,
+		speed:400,
+	});
+})
+</script><?php endif; ?>

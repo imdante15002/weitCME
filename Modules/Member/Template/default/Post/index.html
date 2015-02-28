@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><!--{$u.username}-->- 帖子发布- <!--{$g.sitename}--></title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<include file="Public/Common/style.html" />
+	<css file="__mcss__/member.min.css"/>
+</head>
+<body>
+<div class="container">
+	<include file="Public/Home/header.html" />
+	<include file="Public/Member/header.html" />
+	<div class="wp cl">
+		<div class="home-main mt20 cl">
+			<div class="home-main-post-tab">
+				<li id="#thread" class="cur">发布帖子</li>
+				<li id="#house">租房租售</li>
+				<li id="#job">招聘求职</li>
+			</div>
+			<form action="/member.php/post/postdo" method="post">
+				<input type="hidden" name="postType" class="postType" value="1">
+				<div class="form-group">
+					<div class="forum-select z mr10">
+						<select name="fid" class="form-control">
+							<option value="">版块</option>
+							<volist name="forum" id="vo">
+							<option value="<!--{$vo.id}-->"><!--{$vo.name}--></option>
+							</volist>
+						</select>
+					</div>
+					<input type="text" name="title" class="form-control w500" placeholder="输入帖子标题，200字以内">
+				</div>
+				<div class="form-group"><textarea name="body" id="Content"></textarea></div>
+				<div class="form-group"><input type="submit" class="btn btn-submit" value="发布"></div>
+			</form>
+		</div>
+		<include file="Public/Member/aisde.html" />
+	</div>
+	<include file="Public/Home/footer.html" />
+	<js file="/Static/ueditor/ueditor.config.js"/>
+	<js file="/Static/ueditor/ueditor.all.min.js"/>
+	<js file="/Static/ueditor/ue_config_post.js"/>
+	<script type="text/javascript">
+		$(function(){
+			$('.home-main-post-tab li').click(function(){
+				$(this).addClass('cur').siblings('.home-main-post-tab li').removeClass('cur');
+				var id=$(this).attr('id');
+				if(id=='#house'){
+					$('.postType').attr('value','2')
+				}else if(id=='#job'){
+					$('.postType').attr('value','3')
+				}else{
+					$('.postType').attr('value','1')
+				}	
+			})
+		})
+	</script>
